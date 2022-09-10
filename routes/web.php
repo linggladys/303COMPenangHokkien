@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,11 @@ Route::get('/', function () {
 
 Auth::routes(['verify'=>true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['verified']);
 
-Route::any('/auth-card',function(){
-    return view('auth.auth-card');
+Route::group(['middleware'=>['auth','verified'],'prefix'=>'user/profile'],function(){
+    Route::get('index',[ProfileController::class,'index'])->name('profile.index');
+    Route::get('edit',[ProfileController::class,'edit'])->name('profile.edit');
+    Route::get('store',[ProfileController::class,'store'])->name('profile.store');
 });
+
