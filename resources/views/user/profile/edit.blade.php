@@ -13,8 +13,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-flex justify-content-center">
-                                    <img src="{{ asset('assets/images/No-image-available.png') }}"
+                                    @if($userData->profile_image)
+                                    <img src="{{ asset('uploads/user_images/'.$userData->profile_image) }}"
                                         alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="w-25 img-fluid rounded-circle">
+                                    @else
+                                    <img src="{{ asset('assets/images/user.png') }}"
+                                        alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="w-25 img-fluid rounded-circle">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-6">

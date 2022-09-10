@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Auth::routes(['verify'=>true]);
 
+Route::name('auth.resend_confirmation')->get('/register/confirm/resend', 'Auth\RegisterController@resendConfirmation');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['verified']);
 
 Route::group(['middleware'=>['auth','verified'],'prefix'=>'user/profile'],function(){

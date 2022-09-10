@@ -34,13 +34,13 @@
                             <img src="{{ asset('uploads/user_images/' .Auth::user()->profile_image) }}" alt="user-image-profile"
                                 class="icon-avatar rounded-circle">
                         @else
-                            <img src="{{ asset('assets/images/No-image-available.png') }}" alt="user-profile-image"
+                            <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
                                 class="icon-avatar rounded-circle">
                         @endif
                     <!-- Authentication Links -->
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link text-indigo-700 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Ha lo, {{ Auth::user()->username }}
+                                {{ Auth::user()->username }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">

@@ -10,8 +10,8 @@
                             <img src="{{ asset('uploads/user_images/' . $userData->profile_image) }}" alt="user-image-profile"
                                 class="w-25 img-fluid rounded-circle">
                         @else
-                            <img src="{{ asset('assets/images/No-image-available.png') }}" alt="user-profile-image"
-                                class="w-25 img-fluid rounded-circle">
+                            <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
+                                class="img-fluid rounded-circle">
                         @endif
                     </div>
 

@@ -6,8 +6,8 @@
 
 .icon-avatar
 {
-    width:15%;
-    max-height: auto;
+    width:max-content;
+    max-height: 40px;
 }
 
 .card-auth-header

@@ -23,6 +23,34 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $greeting = "";
+
+        $time=time();
+
+        $timezone = date("Asia/Kuala_Lumpur");
+
+        if($time<"12")
+        {
+            $greeting = "Good morning, ";
+        }
+
+        if($time>="12" && $time<"17")
+        {
+            $greeting = "Hello, ";
+        }
+
+        if($time>="17" && $time<"19")
+        {
+            $greeting = "Good evening, ";
+        }
+
+        if($time>="19")
+        {
+            $greeting = "Good night, ";
+        }
+
+
+        return view('home',compact('greeting'));
     }
 }
