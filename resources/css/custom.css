@@ -6,9 +6,11 @@
 
 .icon-avatar
 {
-    width:max-content;
+    width:40px;
     max-height: 40px;
+    border-radius: 50%;
 }
+
 
 .card-auth-header
 {

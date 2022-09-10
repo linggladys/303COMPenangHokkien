@@ -28,6 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware'=>['auth','verified'],'prefix'=>'user/profile'],function(){
     Route::get('index',[ProfileController::class,'index'])->name('profile.index');
     Route::get('edit',[ProfileController::class,'edit'])->name('profile.edit');
-    Route::get('store',[ProfileController::class,'store'])->name('profile.store');
+    Route::post('store',[ProfileController::class,'store'])->name('profile.store');
+    Route::get('change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
 });
 

@@ -15,7 +15,7 @@
                                 <div class="d-flex justify-content-center">
                                     @if($userData->profile_image)
                                     <img src="{{ asset('uploads/user_images/'.$userData->profile_image) }}"
-                                        alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="w-25 img-fluid rounded-circle">
+                                        alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="w-25 img-fluid img-thumbnail">
                                     @else
                                     <img src="{{ asset('assets/images/user.png') }}"
                                         alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="w-25 img-fluid rounded-circle">
@@ -33,29 +33,28 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" class="form-control" id="name" name="name"
                                         value="{{ $userData->name }}" placeholder="Jane Doe" aria-describedby="emailHelp">
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="username" name="username"
                                         value="{{ $userData->username }}" placeholder="janedoe"
                                         aria-describedby="emailHelp">
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+
+
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name="email"
                                         value="{{ $userData->email }}" placeholder="janedoe@email.com"
                                         aria-describedby="emailHelp">
                                 </div>
-                            </div>
+
                             {{-- <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Password</label>

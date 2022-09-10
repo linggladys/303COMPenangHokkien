@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
         $userData->save();
 
-        return redirect(route('profile.index'));
+        return redirect(route('profile.index'))->withSuccess('User Profile Edited With Success! ');
     }
 
     /**
@@ -82,6 +82,11 @@ class ProfileController extends Controller
         $id = Auth::user()->id;
         $userData = User::find($id);
         return view('user.profile.edit',compact('userData'));
+    }
+
+    public function changePassword()
+    {
+        return view('user.profile.change-password');
     }
 
     /**
