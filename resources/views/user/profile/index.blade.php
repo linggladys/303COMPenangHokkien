@@ -8,6 +8,12 @@
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+        @elseif(session('failures'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa-solid fa-face-frown" style="font-size: 18pt"></i>
+            {{ session('failures') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -18,7 +24,7 @@
                                 class="w-25 img-fluid img-thumbnail">
                         @else
                             <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
-                                class="img-fluid rounded-circle">
+                                class="img-fluid img-thumbnail">
                         @endif
                     </div>
 
