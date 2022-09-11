@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -90,30 +89,17 @@ class ProfileController extends Controller
         return view('user.profile.change-password');
     }
 
-    public function updatePassword(Request $request)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'old_password' => 'required',
-            'new_password' => 'required|min:8',
-            'confirm_password' => 'required|same:new_password',
-        ]);
-
-        $hashedPassword = Auth::user()->password;
-        if (Hash::check($request->old_password, $hashedPassword))
-        {
-            $users = User::find(Auth::id());
-            // access users password
-            $users->password = bcrypt($request->new_password);
-            $users->save();
-
-            return redirect(route('profile.index'))->withSuccess('User Password Edited With Success! ');
-        }else{
-            return redirect(route('profile.index'))->withFailures('Oops, the current password does not match with the new one.');
-        }
-
+        //
     }
-
-
 
     /**
      * Remove the specified resource from storage.

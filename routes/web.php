@@ -29,9 +29,6 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user/profile'],functi
     Route::get('index',[ProfileController::class,'index'])->name('profile.index');
     Route::get('edit',[ProfileController::class,'edit'])->name('profile.edit');
     Route::post('store',[ProfileController::class,'store'])->name('profile.store');
-
     Route::get('change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
-    Route::post('change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
-
 });
 

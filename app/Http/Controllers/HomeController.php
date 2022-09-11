@@ -30,7 +30,7 @@ class HomeController extends Controller
 
         $timezone = date("Asia/Kuala_Lumpur");
 
-        if($time>="00" && $time<"12")
+        if($time<"12")
         {
             $greeting = "Good morning, ";
         }

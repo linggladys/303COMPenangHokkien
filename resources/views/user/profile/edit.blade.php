@@ -62,7 +62,7 @@
                                 </div>
                             </div> --}}
                             <div class="d-flex justify-content-center gap-2">
-                                <button type="submit" class="btn btn-primary">Update User Profile</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                                 <a href="{{ route('profile.index') }}" class="btn btn-danger">Cancel</a>
                             </div>
                         </div>
