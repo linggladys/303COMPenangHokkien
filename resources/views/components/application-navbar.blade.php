@@ -46,6 +46,7 @@
                             <div class="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
                                 {{-- Redirect to User Profile --}}
                                 <a class="dropdown-item text-indigo-700" href="{{ route('profile.index') }}">
+                                    <i class="fa-solid fa-user"></i>
                                     {{ __('Profile') }}
                                 </a>
 
@@ -53,6 +54,7 @@
                                 <a class="dropdown-item text-indigo-700" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
+                                                 <i class="fa-solid fa-sign-out-alt"></i>
                                     {{ __('Logout') }}
                                 </a>
 
