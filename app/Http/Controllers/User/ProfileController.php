@@ -19,7 +19,7 @@ class ProfileController extends Controller
     {
         $id = Auth::user()->id;
         $userData = User::find($id);
-        return view('user.profile.index',compact('userData'));
+        return view('profile.index',compact('userData'));
     }
 
     /**
@@ -82,12 +82,12 @@ class ProfileController extends Controller
     {
         $id = Auth::user()->id;
         $userData = User::find($id);
-        return view('user.profile.edit',compact('userData'));
+        return view('profile.edit',compact('userData'));
     }
 
     public function changePassword()
     {
-        return view('user.profile.change-password');
+        return view('profile.change-password');
     }
 
     public function updatePassword(Request $request)

@@ -17,7 +17,7 @@
                         <a href="#" class="nav-link text-indigo-700">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-indigo-700">Lessons</a>
+                        <a href="{{ route('lessons.index') }}" class="nav-link text-indigo-700">Lessons</a>
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link text-indigo-700">Games</a>

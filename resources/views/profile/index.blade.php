@@ -28,7 +28,7 @@
                         @endif
                     </div>
 
-                    <div class="btn-group mb-3" role="group" aria-label="Basic outlined example">
+                    <div class="btn-group mb-3" role="group" aria-label="Some activities">
                         <button type="button" class="btn btn-outline-dark">59 friends</button>
                         <button type="button" class="btn btn-outline-dark">2 responses</button>
                     </div>
