@@ -20,7 +20,7 @@
                         <a href="{{ route('lessons.index') }}" class="nav-link text-indigo-700">Lessons</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#" class="nav-link text-indigo-700">Games</a>
+                        <a href="{{ url('games') }}" class="nav-link text-indigo-700">Games</a>
                     </li>
                     {{-- <li class="nav-item disabled">
                         <a href="#" class="nav-link">Q-n-a Pronunciation</a>
