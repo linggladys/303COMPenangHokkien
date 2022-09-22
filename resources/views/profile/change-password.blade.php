@@ -14,7 +14,9 @@
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <i class="fa-solid fa-face-frown" style="font-size: 24pt"></i>
                             @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                            <ul>
+                               <li>{{ $error }}</li>
+                            </ul>
                             @endforeach
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>

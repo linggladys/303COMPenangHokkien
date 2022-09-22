@@ -44,6 +44,10 @@ class ProfileController extends Controller
         $userData = User::find($id);
 
         // validation
+        $request->validate([
+            'profile_image' =>'nullable|image|mimes:jpg,png,gif,jpeg|max:2048'
+        ]);
+
         $userData->name = $request->name;
         $userData->username = $request->username;
         $userData->email = $request->email;
