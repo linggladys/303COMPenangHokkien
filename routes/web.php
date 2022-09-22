@@ -3,6 +3,7 @@
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\PhraseCategoryController;
+use App\Http\Controllers\PhraseController;
 use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,9 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::get('/profile/change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
     Route::post('/profile/change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
 
-    Route::get('phrase',[PhraseCategoryController::class,'index'])->name('phrases.index');
+    Route::get('/phrase',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
+
+    Route::get('/phrase/word/{id}',[PhraseController::class,'index'])->name('phrases.index');
 
 });
 

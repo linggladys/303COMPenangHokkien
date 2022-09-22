@@ -76,3 +76,99 @@
   .image-container:hover .btn-custom {
     opacity: 1;
   }
+
+  /* slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: grabbing;
+    width: 15rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #4348f0;
+    height: 0.25rem;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #4348f0;
+    height: 0.5rem;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -12px;
+    background-color: #8084ef;
+    border-radius: 12px;
+    height: 2rem;
+    width: 1rem;
+}
+
+input[type="range"]::-moz-range-thumb{
+    border: none;
+    background-color: #8084ef;
+    border-radius: 12px;
+    height: 2rem;
+    width: 1rem;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid  #8084ef;
+    box-shadow: 0 0 10px #75768e;
+    outline: 1px solid #8084ef;
+    outline-offset: 0.125rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid  #8084ef;
+    box-shadow: 0 0 10px #75768e;
+    outline: 1px solid #8084ef;
+    outline-offset: 0.125rem;
+}
+
+/* phrase image from their perspective lessons*/
+.phrase-container {
+    width: 100%;
+    height: 10vw;
+}
+
+.phrase-img-card {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* phrase card */
+/* card-flipping */
+.custom-card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
+.front{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    backface-visibility: hidden;
+}
+
+.back{
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.custom-card:hover{
+    transform: rotateY(180deg);
+}
+
+

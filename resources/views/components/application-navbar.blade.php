@@ -17,7 +17,7 @@
                         <a href="#" class="nav-link text-indigo-700">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('phrases.index') }}" class="nav-link text-indigo-700">Phrases</a>
+                        <a href="{{ route('phrasesCategory.index') }}" class="nav-link text-indigo-700">Phrases</a>
                     </li>
                     <li class="nav-item ">
                         <a href="{{ url('games') }}" class="nav-link text-indigo-700">Games</a>

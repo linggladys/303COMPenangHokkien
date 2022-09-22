@@ -14,8 +14,8 @@ class PhraseCategoryController extends Controller
      */
     public function index()
     {
-        $phrase_category = PhraseCategory::all();
-        return view('phraseCategory.index',compact('phrase_category'));
+        $phraseCategories = PhraseCategory::get();
+        return view('phraseCategory.index',compact('phraseCategories'));
     }
 
     /**
