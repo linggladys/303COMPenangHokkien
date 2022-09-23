@@ -171,4 +171,8 @@ input[type="range"]:focus::-moz-range-thumb {
     transform: rotateY(180deg);
 }
 
+#custom-form-switch{
+    padding-left: 3em;
+}
+
 
