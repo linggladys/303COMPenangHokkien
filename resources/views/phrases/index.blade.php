@@ -9,8 +9,10 @@
                         <div class="front">
                             <div class="card-body text-center">
                                 <div class="phrase-container">
-                                    <img class="card-img-top phrase-img-card" src="{{ asset($phrase->phrase_image) }}"
-                                        alt="phrase_placeholder_image" />
+                                    @if ($phrase->phrase_image)
+                                        <img class="card-img-top phrase-img-card" src="{{ asset($phrase->phrase_image) }}"
+                                            alt="phrase_placeholder_image" />
+                                    @endif
                                 </div>
 
                                 <h3 class="card-title">{{ $phrase->phrase_meaning }}</h3>
@@ -20,9 +22,6 @@
                         <div class="back">
                             <div class="card-body text-center">
                                 <h3 class="card-title">{{ $phrase->phrase_name }}</h3>
-                                <p class="card-text small"><span class="fw-bolder">Pronunciation:
-                                    </span>{{ $phrase->phrase_pronunciation_word }}
-                                </p>
 
                                 <audio id="myAudio">
                                     <source src="{{ asset($phrase->phrase_pronunciation_audio_m) }}" type="audio/mpeg" />
@@ -51,30 +50,30 @@
                                 </div>
 
 
-                                    Audio Speed
-                                    <i class="fa-solid fa-gauge-high"></i> <span id="currentPbr" class="mr-3">1</span>
+                                Audio Speed
+                                <i class="fa-solid fa-gauge-high"></i> <span id="currentPbr" class="mr-3">1</span>
 
-                                    <form action="#" class="mb-3">
-                                        <label for="pbr">
-                                        </label>
-                                        <input id="pbr" type="range" value="1" min="0.75" max="2"
-                                            step="0.25" />
-                                    </form>
+                                <form action="#" class="mb-3">
+                                    <label for="pbr">
+                                    </label>
+                                    <input id="pbr" type="range" value="1" min="0.75" max="2"
+                                        step="0.25" />
+                                </form>
 
 
-                                </div>
                             </div>
-
-
-
                         </div>
+
+
 
                     </div>
 
             </div>
-            @endforeach
-            {!! $phrases->links('pagination::simple-bootstrap-5') !!}
+
         </div>
+        @endforeach
+        {!! $phrases->links('pagination::simple-bootstrap-5') !!}
+    </div>
     </div>
     </div>
 @endsection

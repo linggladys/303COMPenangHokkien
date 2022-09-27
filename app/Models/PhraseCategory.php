@@ -15,6 +15,6 @@ class PhraseCategory extends Model
 
     public function phrases()
     {
-        return $this->hasMany(Phrase::class);
+        return $this->hasMany(Phrase::class, 'phrase_category_id');
     }
 }

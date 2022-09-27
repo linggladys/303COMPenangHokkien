@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('phrase_category_id');
             $table->text('phrase_name');
             $table->text('phrase_meaning');
-            $table->text('phrase_pronunciation_word');
             $table->longText('phrase_image')->nullable();
             $table->longText('phrase_pronunciation_audio_m');
             $table->longText('phrase_pronunciation_audio_f');
