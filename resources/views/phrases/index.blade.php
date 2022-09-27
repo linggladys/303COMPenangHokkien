@@ -4,6 +4,12 @@
     <div class="container">
         <div class="row">
             <div class="container">
+                <div class="mb-3">
+                    <a href="{{ route('phrasesCategory.index')}}" class="btn btn-warning">
+                        <i class="fa-solid fa-long-arrow-left"></i>
+                        Return to Phrase Categories
+                    </a>
+                </div>
                 @foreach ($phrases as $phrase)
                     <div class="card mb-3 custom-card" id="card">
                         <div class="front">
