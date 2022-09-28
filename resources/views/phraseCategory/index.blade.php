@@ -4,11 +4,11 @@
     <div class="container">
         <div class="row">
             <div class="container">
-                <x-page-header>Phrase List</x-page-header>
+                <x-app-page-header>Phrase List</x-app-page-header>
                 <div class="row">
                     @foreach ($phraseCategories as $category)
                         <div class="col-md-4 col-sm-6">
-                            <div class="card mb-3">
+                            <div class="card bg-white mb-3">
                                 <div class="image-container">
 
                                     <img class="card-img-top d-block position-absolute"

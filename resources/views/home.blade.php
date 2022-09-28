@@ -4,7 +4,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <x-page-header>Halo {{ Auth::user()->name }}</x-page-header>
+            <x-app-page-header>Halo {{ Auth::user()->name }}</x-app-page-header>
         </div>
     </div>
 

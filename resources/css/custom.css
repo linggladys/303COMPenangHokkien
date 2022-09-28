@@ -14,6 +14,12 @@
     border-radius: 50%;
 }
 
+/* toggle dark mode switch */
+#custom-form-switch{
+    padding-left: 3em;
+}
+
+
 /*PROFILE SETTINGS*/
 .card-auth-header
 {
@@ -145,8 +151,7 @@ input[type="range"]:focus::-moz-range-thumb {
     object-fit: contain;
 }
 
-/* phrase card */
-/* card-flipping */
+/* card-flipping for the phrases */
 .custom-card{
     position: relative;
     transform-style: preserve-3d;
@@ -171,8 +176,9 @@ input[type="range"]:focus::-moz-range-thumb {
     transform: rotateY(180deg);
 }
 
-#custom-form-switch{
-    padding-left: 3em;
-}
 
+/* hovering over the audio speed */
+.span-text-hover{
+    cursor: default;
+}
 

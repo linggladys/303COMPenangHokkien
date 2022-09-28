@@ -23,7 +23,7 @@
 
 <body>
     <div id="app">
-        <x-application-navbar></x-application-navbar>
+        <x-app-navbar></x-app-navbar>
         <main class="py-4">
             @yield('content')
         </main>

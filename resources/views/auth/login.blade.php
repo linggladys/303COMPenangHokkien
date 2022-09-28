@@ -2,17 +2,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-auth-card>
+    <x-app-auth-card>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <div class="d-flex justify-content-center">
-                <x-application-logo ></x-application-logo>
+                <x-app-logo></x-app-logo>
             </div>
 
-            <x-auth-card-header>
+            <x-app-auth-card-header>
                 Login
-            </x-auth-card-header>
+            </x-app-auth-card-header>
 
             <div class="row mb-3">
                 <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
@@ -72,5 +72,5 @@
                 Are you new here? Head over to the <a href="{{ route('register') }}"> register </a> page.
             </div>
         </form>
-    </x-auth-card>
+    </x-app-auth-card>
 @endsection

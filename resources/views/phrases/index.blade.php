@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 @foreach ($phrases as $phrase)
-                    <div class="card mb-3 custom-card" id="card">
+                    <div class="card mb-3 custom-card bg-light" id="card">
                         <div class="front">
                             <div class="card-body text-center">
                                 <div class="phrase-container">
@@ -21,7 +21,7 @@
                                     @endif
                                 </div>
 
-                                <h3 class="card-title">{{ $phrase->phrase_meaning }}</h3>
+                                <h3 class="card-title span-text-hover">{{ $phrase->phrase_meaning }}</h3>
                             </div>
                         </div>
 
@@ -44,20 +44,24 @@
                                 <div class="gap-2 mb-3">
                                     <p class="small fw-bolder">Audio Pronunciation:</p>
                                     <div class="btn-group" role="group">
-                                        <button class="btn btn-outline-secondary" onclick="playAudio()">
+                                        <button class="btn btn-outline-primary" onclick="playAudio()">
                                             <img src="{{ asset('assets/images/male.png') }}" alt="male-speech-bubble"
-                                                class="pronunciation-img" title="Male pronounce">
+                                                class="pronunciation-img">
+                                                Male Pronounce
                                         </button>
-                                        <button class="btn btn-outline-secondary" onclick="playAudio2()">
+                                        <button class="btn btn-outline-primary" onclick="playAudio2()">
                                             <img src="{{ asset('assets/images/female.png') }}" alt="female-speech-bubble"
                                                 class="pronunciation-img" title="Female pronounce">
+                                                Female Pronounce
                                         </button>
                                     </div>
                                 </div>
 
 
-                                Audio Speed
-                                <i class="fa-solid fa-gauge-high"></i> <span id="currentPbr" class="mr-3">1</span>
+                                <div class="span-text-hover">
+                                    Audio Speed
+                                    <i class="fa-solid fa-gauge-high"></i> <span id="currentPbr" class="mr-3">1</span>
+                                </div>
 
                                 <form action="#" class="mb-3">
                                     <label for="pbr">
@@ -66,6 +70,16 @@
                                         step="0.25" />
                                 </form>
 
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-info text-white">
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        Like this phrase
+                                    </button>
+                                    <button type="button" class="btn bg-indigo-600 text-white">
+                                        <i class="fa-solid fa-brain"></i>
+                                        Add a memory aid
+                                    </button>
+                                  </div>
 
                             </div>
                         </div>
