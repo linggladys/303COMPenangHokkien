@@ -25,9 +25,11 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('phrasesCategory.index') }}">
+                                    <i class="fa-solid fa-list"></i>
                                     List of Categories
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('likedphraselist.likes') }}">
+                                    <i class="fa-solid fa-thumbs-up"></i>
                                      Liked Phrases
                                 </a>
                             </div>
@@ -63,8 +65,8 @@
                                 <a href="#" class="dropdown-iem text-indigo-700">
                                     <div class="form-check form-switch" id="custom-form-switch">
                                         <input type="checkbox" class="form-check-input" id="darkSwitch" />
+                                        <i class="fa fa-moon"></i>
                                         <label class="custom-control-label" for="darkSwitch">Dark Mode
-                                            <i class="fa fa-moon"></i>
                                         </label>
                                     </div>
                                 </a>

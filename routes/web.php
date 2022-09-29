@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PhraseCategoryController;
 use App\Http\Controllers\PhraseController;
 use App\Http\Controllers\User\ProfileController;
@@ -29,6 +30,11 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::get('/phrase',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
 
     Route::get('/phrase/{phraseCateogryId}/word/',[PhraseController::class,'index'])->name('phrases.index');
+
+    Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');
+    Route::post('/phrase/{phrase}/word/likes',[LikeController::class,'store'])->name('phrases.likes');
+    Route::delete('/phrase/{phrase}/word/likes',[LikeController::class,'destroy'])->name('phrase.likes');
+
 
 });
 

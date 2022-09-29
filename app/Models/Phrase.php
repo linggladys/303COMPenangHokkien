@@ -9,12 +9,29 @@ class Phrase extends Model
 {
     use HasFactory;
 
-    protected $table = 'phrases';
+    protected $table = "phrases";
+
+    protected $primaryKey = "id";
 
     public $timestamps = false;
+
+    // custom function
+    public function likedBy(User $user)
+    {
+        // Laravel collection method
+        return $this->likes->contains('user_id',$user->id);
+    }
 
     public function phraseCategory()
     {
         return $this->belongsTo(PhraseCategory::class);
     }
+
+    // a phrase can contain many likes
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+
 }

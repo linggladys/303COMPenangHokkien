@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $userId = auth()->user()->id;
+        $likes = Like::with('user')->where('user_id',$userId)->count();
+        return view('home',[
+            'likes' => $likes
+        ]);
     }
+
+
 }
