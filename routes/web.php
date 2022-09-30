@@ -20,6 +20,9 @@ Route::name('auth.resend_confirmation')->get('/register/confirm/resend', 'Auth\R
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['verified']);
 
 Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
+    Route::get('phrase/{phraseId}',[PhraseController::class,'show'])->name('phrases.show');
+    Route::get('/phrase/{phraseCateogryId}/word/',[PhraseController::class,'index'])->name('phrases.index');
+
     Route::get('/profile/index',[ProfileController::class,'index'])->name('profile.index');
     Route::get('/profile/edit',[ProfileController::class,'edit'])->name('profile.edit');
     Route::post('/profile/store',[ProfileController::class,'store'])->name('profile.store');
@@ -28,8 +31,11 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::post('/profile/change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
 
     Route::get('/phrase',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
+    Route::get('/phraseCategory/{phraseCategoryId}',[PhraseCategoryController::class,'show'])->name('phrasesCategory.show');
 
-    Route::get('/phrase/{phraseCateogryId}/word/',[PhraseController::class,'index'])->name('phrases.index');
+
+
+
 
     Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');
     Route::post('/phrase/{phrase}/word/likes',[LikeController::class,'store'])->name('phrases.likes');

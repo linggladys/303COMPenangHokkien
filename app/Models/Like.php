@@ -22,6 +22,6 @@ class Like extends Model
 
     public function phrase()
     {
-        return $this->belongsToMany(Phrase::class,"phrase_id");
+        return $this->belongsTo(Phrase::class,"phrase_id");
     }
 }

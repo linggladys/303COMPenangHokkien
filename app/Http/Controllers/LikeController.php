@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\Like;
 use App\Models\Phrase;
+use App\Models\Like;
 use Illuminate\Http\Request;
 
 class LikeController extends Controller
@@ -17,7 +16,7 @@ class LikeController extends Controller
     public function index()
     {
         $userId = auth()->user()->id;
-        $likes = Like::select("phrases.phrase_name")->leftJoin("phrases","phrases.id","=","likes.phrase_id")->where("user_id",$userId)->get();
+        $likes = Like::where('user_id',$userId)->get();
         // dd($likes);
         return view('likes.index', [
             'likes' => $likes,
