@@ -29,8 +29,14 @@
                     </div>
 
                     <div class="btn-group mb-3" role="group" aria-label="Some activities">
-                        <button type="button" class="btn btn-outline-dark">59 friends</button>
-                        <button type="button" class="btn btn-outline-dark">2 responses</button>
+                        <button type="button" class="btn btn-outline-dark">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            4 responses
+                        </button>
+                        <button type="button" class="btn btn-outline-dark">
+                            <i class="fa-solid fa-star"></i>
+                            2 starred responses
+                        </button>
                     </div>
 
                     <div class="mb-3">

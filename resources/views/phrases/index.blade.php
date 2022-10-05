@@ -29,19 +29,18 @@
                     <div class="card mb-3 custom-card bg-light" id="card">
                         <div class="front">
                             <div class="card-body text-center">
-                                <div class="phrase-container">
                                     @if ($phrase->phrase_image)
+                                    <div class="phrase-container">
                                         <img class="card-img-top phrase-img-card" src="{{ asset($phrase->phrase_image) }}"
                                             alt="phrase_placeholder_image" />
+                                        </div>
                                     @endif
-                                </div>
-
                                 <h3 class="card-title span-text-hover">{{ $phrase->phrase_meaning }}</h3>
                             </div>
                         </div>
 
                         <div class="back">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center span-text-hover">
                                 <h3 class="card-title">{{ $phrase->phrase_name }}</h3>
 
                                 <audio id="myAudio">
@@ -105,10 +104,10 @@
                                     @endif
 
                                     </button>
-                                    <button type="button" class="btn bg-indigo-600 text-white">
+                                    <a href="{{ route('memoryaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
                                         <i class="fa-solid fa-brain"></i>
                                         Add a memory aid
-                                    </button>
+                                    </a>
                                 </div>
 
                             </div>

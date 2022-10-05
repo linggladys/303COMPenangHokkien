@@ -34,12 +34,20 @@
                                 </a>
                             </div>
                         </li>
-                        {{-- <li class="nav-item ">
-                            <a href="{{ url('games') }}" class="nav-link text-indigo-700">Games</a>
-                        </li> --}}
-                        {{-- <li class="nav-item disabled">
-                        <a href="#" class="nav-link">Q-n-a Pronunciation</a>
-                    </li> --}}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-indigo-700" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Games
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item disabled" href="#">
+                                <i class="fa-solid fa-hand-pointer"></i>
+                                Drag and Drop
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="#" class="nav-link disabled">Q-n-a Pronunciation</a>
+                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -62,16 +70,6 @@
 
 
                             <div class="dropdown-menu dropdown-menu-end bg-light" style="margin: 0" aria-labelledby="navbarDropdown">
-                                <a href="#" class="dropdown-iem text-indigo-700">
-                                    <div class="form-check form-switch" id="custom-form-switch">
-                                        <input type="checkbox" class="form-check-input" id="darkSwitch" />
-                                        <i class="fa fa-moon"></i>
-                                        <label class="custom-control-label" for="darkSwitch">Dark Mode
-                                        </label>
-                                    </div>
-                                </a>
-                                <hr>
-
 
                                 {{-- Redirect to User Profile --}}
                                 <a class="dropdown-item text-indigo-700" href="{{ route('profile.index') }}">

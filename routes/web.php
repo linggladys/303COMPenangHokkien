@@ -3,6 +3,7 @@
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\MemAidController;
 use App\Http\Controllers\PhraseCategoryController;
 use App\Http\Controllers\PhraseController;
 use App\Http\Controllers\User\ProfileController;
@@ -34,14 +35,11 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::get('/phraseCategory/{phraseCategoryId}',[PhraseCategoryController::class,'show'])->name('phrasesCategory.show');
 
 
-
-
-
     Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');
     Route::post('/phrase/{phrase}/word/likes',[LikeController::class,'store'])->name('phrases.likes');
     Route::delete('/phrase/{phrase}/word/likes',[LikeController::class,'destroy'])->name('phrase.likes');
 
-
+    Route::get('/memory-aid/{id}',[MemAidController::class,'index'])->name('memoryaid.index');
 });
 
 Route::get('games',GameController::class);
