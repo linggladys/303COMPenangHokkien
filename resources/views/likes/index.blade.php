@@ -70,7 +70,7 @@
 
                 @empty
                     <img src="{{ asset('assets/images/frowned.png') }}" alt="notFound" class="mx-auto">
-                    There is no likes. Make an initiave to like a phrase!
+                    It is empty here.
                     @endforelse
                 </table>
             </div>

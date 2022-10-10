@@ -15,10 +15,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700;800&display=swap" rel="stylesheet">
 
+
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{ asset('assets/logos/logoicon.ico') }}" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
+
+
 </head>
 
 <body>

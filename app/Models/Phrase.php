@@ -34,4 +34,8 @@ class Phrase extends Model
     }
 
 
+    public function memoryAid()
+    {
+        return $this->hasMany(MemAid::class);
+    }
 }

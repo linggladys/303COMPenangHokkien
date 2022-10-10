@@ -90,7 +90,7 @@
             </div>
 
             <div class="text-center fw-semibold">
-                Are you a registered user? Head over to the <a href="{{ route('login') }}"> login </a> page.
+                Are you a registered user? Head over to the <a href="{{ route('login') }}" class="text-decoration-none"> login </a> page.
             </div>
         </form>
     </x-app-auth-card>

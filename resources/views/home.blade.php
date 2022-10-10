@@ -19,9 +19,9 @@
                     <div class="col-md-3">
                         <div class="card text-dark bg-indigo-100 mb-3">
                             <div class="card-body">
-                                <h4 class="card-title">Responses</h4>
+                                <h4 class="card-title">Number of Logins</h4>
                                 <hr>
-                                <p class="card-text span-text-hover">3</p>
+                                <p class="card-text span-text-hover">2</p>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="card border-primary text-center">
                           <div class="card-body">
                             <a href={{ route('phrases.show',$phraseItem->id) }} class="card-title text-decoration-none">{{ $phraseItem->phrase_name}}</a>
-                            <p class="card-text small"><span class="fw-bolder">Liked by: </span>{{ $phraseItem->count_likes }}</p> users
+                            <p class="card-text small"><span class="fw-bolder">Liked by: </span>{{ $phraseItem->count_likes }}</p> {{ Str::plural('user',$phraseItem->count_likes) }}
                           </div>
                         </div>
                     </div>

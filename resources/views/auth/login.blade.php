@@ -69,7 +69,7 @@
             @endif
 
             <div class="text-center fw-semibold">
-                Are you new here? Head over to the <a href="{{ route('register') }}"> register </a> page.
+                Are you new here? Head over to the <a href="{{ route('register') }}" class="text-decoration-none"> register </a> page.
             </div>
         </form>
     </x-app-auth-card>

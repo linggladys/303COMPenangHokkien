@@ -104,9 +104,9 @@
                                     @endif
 
                                     </button>
-                                    <a href="{{ route('memoryaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
-                                        <i class="fa-solid fa-brain"></i>
-                                        Add a memory aid
+                                    <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Memory Aid
                                     </a>
                                 </div>
 

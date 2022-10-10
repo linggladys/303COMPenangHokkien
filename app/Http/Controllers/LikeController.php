@@ -60,7 +60,7 @@ class LikeController extends Controller
         $phrase->likes()->create([
             'user_id'=>$request->user()->id
         ]);
-        return back()->withSuccess('You liked the phrase!');
+        return back()->withSuccess('Phrase has been successfully liked!');
 
 
     }
@@ -109,6 +109,6 @@ class LikeController extends Controller
     {
         $request->user()->likes()->where('phrase_id',$phrase->id)->delete();
 
-        return back()->withFailure('You disliked the phrase.');
+        return back()->withSuccess('Phrase is removed from likes with success.');
     }
 }

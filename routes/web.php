@@ -7,6 +7,7 @@ use App\Http\Controllers\MemAidController;
 use App\Http\Controllers\PhraseCategoryController;
 use App\Http\Controllers\PhraseController;
 use App\Http\Controllers\User\ProfileController;
+use App\Models\MemAid;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,15 +32,20 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::get('/profile/change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
     Route::post('/profile/change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
 
-    Route::get('/phrase',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
-    Route::get('/phraseCategory/{phraseCategoryId}',[PhraseCategoryController::class,'show'])->name('phrasesCategory.show');
-
+    Route::get('phrase',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
+    Route::get('phraseCategory/{phraseCategoryId}',[PhraseCategoryController::class,'show'])->name('phrasesCategory.show');
 
     Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');
     Route::post('/phrase/{phrase}/word/likes',[LikeController::class,'store'])->name('phrases.likes');
     Route::delete('/phrase/{phrase}/word/likes',[LikeController::class,'destroy'])->name('phrase.likes');
 
-    Route::get('/memory-aid/{id}',[MemAidController::class,'index'])->name('memoryaid.index');
+    Route::get('phrase/{phraseId}/memory-aid/',[MemAidController::class,'index'])->name('memaid.index');
+    Route::get('phrase/{phraseId}/memory-aid/create',[MemAidController::class,'create'])->name('memaid.create');
+    Route::post('phrase/{phraseId}/memory-aid/store',[MemAidController::class,'store'])->name('memaid.store');
+    Route::get('phrase/{phraseId}/memory-aid/edit',[MemAidController::class,'edit'])->name('memaid.edit');
+    Route::put('phrase/{phraseId}/memory-aid/update',[MemAidController::class,'update'])->name('memaid.update');
+    Route::delete('phrase/{phraseId}/memory-aid/delete',[MemAidController::class,'destroy'])->name('memaid.destroy');
+
 });
 
 Route::get('games',GameController::class);
