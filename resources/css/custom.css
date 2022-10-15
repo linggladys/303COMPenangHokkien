@@ -1,35 +1,32 @@
 /*NAVBAR*/
 /* the application logo displayed at left side of the navbar */
-.navbar-application-logo
-{
+.navbar-application-logo {
     width: 60px;
-    max-height:100%;
+    max-height: 100%;
 }
 
 /* the size for the user profile's profile image in navbar */
-.icon-avatar
-{
-    width:40px;
+.icon-avatar {
+    width: 40px;
     max-height: 40px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 /* toggle dark mode switch */
-#custom-form-switch{
+#custom-form-switch {
     padding-left: 3em;
 }
 
-
 /*PROFILE SETTINGS*/
-.card-auth-header
-{
+.card-auth-header {
     cursor: default;
 }
 
-/* display username in profile navigation */
-.username-display
-{
-    font-size: smaller;
+#showProfileImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 /*LESSONS CARDS*/
@@ -41,11 +38,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .image-container:before {
+}
+.image-container:before {
     /* empty pseudo */
-    content: '';
-
+    content: "";
     opacity: 0;
     transition: opacity 0.5s ease;
 
@@ -56,19 +52,19 @@
     bottom: 0;
     background: rgba(109, 95, 253, 0.5);
     z-index: 2;
-  }
-  .image-container:hover:before {
+}
+.image-container:hover:before {
     opacity: 1;
-  }
+}
 
-  .image-container img {
-    width: 100%;
-    height: 16vw;
+.image-container img {
+    min-width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 1;
-  }
+}
 
-  .btn-custom {
+.btn-custom {
     opacity: 0;
     transition: opacity 0.5s ease;
     position: relative;
@@ -78,12 +74,12 @@
     max-width: 260px;
     cursor: pointer;
     z-index: 3;
-  }
-  .image-container:hover .btn-custom {
+}
+.image-container:hover .btn-custom {
     opacity: 1;
-  }
+}
 
-  /* slider */
+/* slider */
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
@@ -102,7 +98,6 @@ input[type="range"]::-moz-range-track {
     height: 0.5rem;
 }
 
-
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -113,7 +108,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 1rem;
 }
 
-input[type="range"]::-moz-range-thumb{
+input[type="range"]::-moz-range-thumb {
     border: none;
     background-color: #8084ef;
     border-radius: 12px;
@@ -126,14 +121,14 @@ input[type="range"]:focus {
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
-    border: 1px solid  #8084ef;
+    border: 1px solid #8084ef;
     box-shadow: 0 0 10px #75768e;
     outline: 1px solid #8084ef;
     outline-offset: 0.125rem;
 }
 
 input[type="range"]:focus::-moz-range-thumb {
-    border: 1px solid  #8084ef;
+    border: 1px solid #8084ef;
     box-shadow: 0 0 10px #75768e;
     outline: 1px solid #8084ef;
     outline-offset: 0.125rem;
@@ -152,13 +147,13 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 /* card-flipping for the phrases */
-.custom-card{
+.custom-card {
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
 }
 
-.front{
+.front {
     position: absolute;
     left: 0;
     right: 0;
@@ -167,23 +162,39 @@ input[type="range"]:focus::-moz-range-thumb {
     backface-visibility: hidden;
 }
 
-.back{
+.back {
     backface-visibility: hidden;
     transform: rotateY(180deg);
 }
 
-.custom-card:hover{
+.custom-card:hover {
     transform: rotateY(180deg);
 }
 
-
 /* hovering over the audio speed */
-.span-text-hover{
+.span-text-hover {
     cursor: default;
 }
 
+/* for the drag and drop game */
+.draggable-list {
+    padding: 5px;
+}
 
-/* statistic card navigation links */
-.statisCardLink{
-    text-decoration: none;
+.draggable-list > li {
+    list-style-type: none;
+    padding: 10px;
+    margin: 5px;
+    background-color: #b6a9f7;
+    border: 1px solid #1c097d;
+    color: white;
+    cursor: grabbing;
+}
+
+.grid-drag {
+    grid-template-columns: repeat(2,1fr);
+}
+
+.draggable-list > li.over {
+    background-color: #9c88ff;
 }

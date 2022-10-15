@@ -52,4 +52,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(MemAid::class);
     }
+
+    public function upvotes()
+    {
+        return $this->hasMany(Upvote::class);
+    }
 }

@@ -48,7 +48,7 @@ class LoginController extends Controller
     public function authenticated(Request $request, $user)
     {
         $user->last_login = Carbon::now()->toDateTimeString();
-        $user->login_count++;
+        $user->amount_of_logins++;
         $user->save();
     }
 }

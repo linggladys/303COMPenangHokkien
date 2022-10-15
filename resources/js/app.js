@@ -1,5 +1,4 @@
 import './bootstrap';
-import './custom';
+import './jquery';
 import '../sass/app.scss'
-
 import '@popperjs/core'

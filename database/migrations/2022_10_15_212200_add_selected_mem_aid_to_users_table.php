@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->timestamp('last_login')->nullable();
-            $table->integer('amount_of_logins')->unsigned()->default(0);
+            //
         });
     }
 

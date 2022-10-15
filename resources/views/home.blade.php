@@ -9,7 +9,7 @@
                     <div class="col-md-3">
                         <div class="card bg-dark text-light mb-3">
                             <div class="card-body">
-                                <h4><a href="{{ route('likedphraselist.likes') }}" class="text-decoration-none">Liked Phrases</a>
+                                <h4><a href="{{ route('likedphraselist.likes') }}" class="text-decoration-none">Liked {{ Str::plural('phrase',$likes) }}</a>
                                 </h4>
                                 <hr>
                                 <p class="card-text span-text-hover">{{ $likes }}</p>
@@ -19,9 +19,9 @@
                     <div class="col-md-3">
                         <div class="card text-dark bg-indigo-100 mb-3">
                             <div class="card-body">
-                                <h4 class="card-title">Number of Logins</h4>
+                                <h4 class="card-title">Amount of  {{ Str::plural('login',Auth::user()->amount_of_logins) }}</h4>
                                 <hr>
-                                <p class="card-text span-text-hover">2</p>
+                                <p class="card-text span-text-hover">{{ Auth::user()->amount_of_logins }}</p>
                             </div>
                         </div>
                     </div>

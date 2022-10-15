@@ -40,9 +40,13 @@
                             Games
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item disabled" href="#">
+                            <a class="dropdown-item" href="{{ route('draganddrop.index') }}">
                                 <i class="fa-solid fa-hand-pointer"></i>
                                 Drag and Drop
+                            </a>
+                            <a class="dropdown-item disabled" href="{{ route('draganddrop.index') }}">
+                                <i class="fa-solid fa-question"></i>
+                                Quiz
                             </a>
                         </li>
                         <li class="nav-item">

@@ -50,7 +50,6 @@ class ProfileController extends Controller
 
         $userData->name = $request->name;
         $userData->username = $request->username;
-        $userData->email = $request->email;
 
         if($request->file('profile_image')){
             $file = $request->file('profile_image');

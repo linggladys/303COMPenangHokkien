@@ -27,13 +27,11 @@
 <body>
     <div id="app">
 
-        <x-app-navbar></x-app-navbar>
 
         <main class="py-4">
-            @yield('content')
+            @yield('guest-content')
         </main>
     </div>
-
-@stack('scripts')
+@yield('scripts')
 </body>
 </html>

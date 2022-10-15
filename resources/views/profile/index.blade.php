@@ -21,7 +21,7 @@
                     <div class="d-flex justify-content-center m-3">
                         @if ($userData->profile_image)
                             <img src="{{ asset('uploads/user_images/' . $userData->profile_image) }}"
-                                alt="user-image-profile" class="w-25 img-fluid img-thumbnail">
+                                alt="user-image-profile" class="rounded-circle" id="showProfileImage">
                         @else
                             <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
                                 class="img-fluid img-thumbnail">

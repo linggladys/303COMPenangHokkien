@@ -40,9 +40,9 @@ class MemAidController extends Controller
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = uniqid().'_'.time().'.'.$extension;
-            $request->file('upload')->move(public_path('uploads/images'), $fileName);
+            $request->file('upload')->move(public_path('storage/images'), $fileName);
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('uploads/images/'.$fileName);
+            $url = asset('storage/images/'.$fileName);
             $message = 'Image has uploaded with success! 😊';
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$message')</script>";
 
@@ -70,12 +70,12 @@ class MemAidController extends Controller
         return redirect(route('memaid.index',$phraseId))->withSuccess('Memory aid created with success!');
     }
 
-    public function edit($phraseId)
+    public function edit($phraseId, $memAidId)
     {
-        $phrase= Phrase::with('memoryAid')->find($phraseId);
-        // dd($memAid);
+        $memoryAids = MemAid::with('phrase')->where('phrase_id',$phraseId)->where('id',$memAidId)->get();
+        // dd($memoryAids);
         return view('memAid.edit',[
-            'phrase'=>$phrase
+            'memoryAids'=>$memoryAids
         ]);
     }
 

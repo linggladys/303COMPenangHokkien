@@ -21,10 +21,10 @@
             @endif
             <div class="container">
                 <div class="mb-3">
-                    <a href="{{ route('likedphraselist.likes') }}" class="btn btn-warning">
+                    <button onclick="history.go(-1)" class="btn btn-warning">
                         <i class="fa-solid fa-long-arrow-left"></i>
-                        Return to Liked Phrases
-                    </a>
+                        Return to Previous Page
+                    </button>
                 </div>
                 @foreach ($phrases as $phrase)
                     <div class="card mb-3 custom-card bg-light" id="card">

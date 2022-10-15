@@ -17,6 +17,12 @@ class MemAid extends Model
         "phrase_id"
     ];
 
+    public function upvotedBy(User $user)
+    {
+        // return if this memAid is liked by the user
+        return $this->upvotes->contains('user_id',$user->id);
+    }
+
     public function phrase()
     {
         return $this->belongsTo(Phrase::class,'phrase_id');
@@ -25,5 +31,10 @@ class MemAid extends Model
     public function user()
     {
         return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function upvotes()
+    {
+        return $this->hasMany(Upvote::class);
     }
 }

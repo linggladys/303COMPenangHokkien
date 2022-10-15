@@ -9,8 +9,11 @@
                     @csrf
                <div class="mb-3">
                  <label for="memory_aid_content" class="form-label">Enter Your Memory Aid Content</label>
-                 <textarea class="form-control" name="memory_aid_content" id="memory_aid_content" rows="3"></textarea>
-                 <button type="submit" class="btn btn-secondary">Save</button>
+                 <textarea class="memory_aid_content form-control" name="memory_aid_content" id="memory_aid_content" rows="3"></textarea>
+                 <div class="my-3">
+                     <button type="submit" class="btn btn-secondary">Save</button>
+                 </div>
+
                 </div>
             </form>
             </div>
@@ -19,6 +22,15 @@
 
 
     </div>
+@push('scripts')
+<script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('memory_aid_content',{
+            filebrowserUploadUrl : "{{ route('memaidPic.upload',['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod : 'form'
+        });
 
+    </script>
+@endpush
 @endsection
 
