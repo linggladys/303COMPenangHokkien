@@ -52,7 +52,7 @@
                                 <td>
                                     {{-- {{ $like->phrase }} --}}
                                     <form action="{{ route('phrase.likes', $like->phrase_id) }}" method="post">
-                                        <a href="{{ route('phrases.show', $like->phrase_id) }}" class="btn btn-primary">
+                                        <a href="{{ route('phrases.show', ['phraseCateogryId'=>$like->phrase->phrase_category_id,'phraseId'=>$like->phrase_id]) }}" class="btn btn-primary">
                                             <i class="fa-solid fa-eye"></i>
                                             View
                                         </a>

@@ -33,7 +33,8 @@
                     <div class="col-md-3">
                         <div class="card border-primary text-center">
                           <div class="card-body">
-                            <a href={{ route('phrases.show',$phraseItem->id) }} class="card-title text-decoration-none">{{ $phraseItem->phrase_name}}</a>
+
+                            <a href={{ route('phrases.show',['phraseCateogryId'=>$phraseItem->phrase_category_id,'phraseId'=>$phraseItem->id]) }} class="card-title text-decoration-none">{{ $phraseItem->phrase_name}}</a>
                             <p class="card-text small"><span class="fw-bolder">Liked by: </span>{{ $phraseItem->count_likes }}</p> {{ Str::plural('user',$phraseItem->count_likes) }}
                           </div>
                         </div>

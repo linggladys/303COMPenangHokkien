@@ -19,7 +19,7 @@ class UpvoteController extends Controller
             'user_id'=> $request->user()->id
         ]);
         // dd($memAid);
-       return back()->withSuccess('The meomory aid is added to the upvotes.');
+       return back()->withSuccess('The memory aid is added to the upvotes.');
     }
 
     public function destroy(MemAid $memAid, Request $request)

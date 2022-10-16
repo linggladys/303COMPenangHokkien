@@ -53,7 +53,10 @@
                             <span class="fw-bold">Created:</span> {{ date('d-m-Y', strtotime($memoryAid->created_at)) }}
                             at {{ date('g:i A', strtotime($memoryAid->created_at)) }}
                         <div class="d-flex justify-content-end gap-2">
+                            <form action="{{ route('memaid.selected',$memoryAid->id) }}" method="post">
+                                @csrf
                             <button class="btn btn-secondary">Select This Memory Aid</button>
+                        </form>
                             @if (!$memoryAid->upvotedBy(auth()->user()))
                                 <form action="{{ route('memaid.upvotes', $memoryAid->id) }}" method="post">
                                     @csrf

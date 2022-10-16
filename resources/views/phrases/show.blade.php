@@ -3,7 +3,6 @@
  @section('title', 'Learn Penang Hokkien - ' . $phrase->phraseCategory->phrase_category_name )
 @endforeach
 @section('content')
-@section('content')
     <div class="container">
         <div class="row">
             @if (session('success'))
@@ -21,7 +20,7 @@
             @endif
             <div class="container">
                 <div class="mb-3">
-                    <button onclick="history.go(-1)" class="btn btn-warning">
+                    <button onclick="history.back()" class="btn btn-warning">
                         <i class="fa-solid fa-long-arrow-left"></i>
                         Return to Previous Page
                     </button>
@@ -30,19 +29,19 @@
                     <div class="card mb-3 custom-card bg-light" id="card">
                         <div class="front">
                             <div class="card-body text-center">
-                                <div class="phrase-container">
                                     @if ($phrase->phrase_image)
+                                    <div class="phrase-container">
                                         <img class="card-img-top phrase-img-card" src="{{ asset($phrase->phrase_image) }}"
                                             alt="phrase_placeholder_image" />
+                                        </div>
                                     @endif
-                                </div>
-
                                 <h3 class="card-title span-text-hover">{{ $phrase->phrase_meaning }}</h3>
+
                             </div>
                         </div>
 
                         <div class="back">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center span-text-hover">
                                 <h3 class="card-title">{{ $phrase->phrase_name }}</h3>
 
                                 <audio id="myAudio">
@@ -86,6 +85,14 @@
                                         step="0.25" />
                                 </form>
 
+                                <h2>Memory Aid</h2>
+                                <div class="mb-3">
+                                  @foreach ($memoryAids as $memAid)
+                                      {!! $memAid->memory_aid_content !!}
+                                  @endforeach
+                                </div>
+
+
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     @if (!$phrase->likedBy(auth()->user()))
                                         <form action="{{ route('phrases.likes', $phrase) }}" method="POST">
@@ -106,16 +113,19 @@
                                     @endif
 
                                     </button>
-                                    <button type="button" class="btn bg-indigo-600 text-white">
-                                        <i class="fa-solid fa-brain"></i>
-                                        Add a memory aid
-                                    </button>
+
+                                    <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Memory Aid
+                                    </a>
+
+
+
                                 </div>
 
                             </div>
+
                         </div>
-
-
 
                     </div>
 
@@ -125,10 +135,11 @@
         @endforeach
 
     </div>
+
     </div>
+
     </div>
-@endsection
-@section('scripts')
+    @push('scripts')
     <script type="text/javascript">
         let x = document.getElementById("myAudio");
         let x2 = document.getElementById("myAudio2");
@@ -155,5 +166,6 @@
             false
         );
     </script>
-@endsection
+@endpush
 
+@endsection

@@ -33,7 +33,6 @@ class Phrase extends Model
         return $this->hasMany(Like::class);
     }
 
-
     public function memoryAid()
     {
         return $this->hasMany(MemAid::class);

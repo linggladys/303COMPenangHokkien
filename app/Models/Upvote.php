@@ -17,6 +17,6 @@ class Upvote extends Model
 
     public function memoryAid()
     {
-        return $this->belongsTo(MemAid::class);
+        return $this->belongsTo(MemAid::class,"mem_aid_id");
     }
 }

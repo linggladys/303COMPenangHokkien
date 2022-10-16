@@ -33,24 +33,21 @@ class HomeController extends Controller
         // number of likes from authenticated users
         $likes = Like::with('user')->where('user_id',$userId)->count();
 
-
-
         $phrase = DB::table('likes')
-        ->select('phrases.phrase_name','phrases.id', DB::raw('count(likes.id) as count_likes'))
+        ->select('phrases.phrase_name','phrases.id','phrase_categories.id as phrase_category_id', DB::raw('count(likes.id) as count_likes'))
         ->leftJoin('phrases', 'likes.phrase_id', '=', 'phrases.id')
+        ->leftJoin('phrase_categories', 'phrases.phrase_category_id', '=', 'phrase_categories.id')
         ->groupBy('phrases.id')
         ->orderBy('count_likes','desc')
         ->take(4)
         ->get();
 
-        // $loginDate = User::where('id',$userId)->value('last_login');
 
-        $phraseId = Phrase::select('id')->get();
-        // dd($loginDate);
+
+        // dd($phrase);
         return view('home',[
             'likes' => $likes,
             'phrase'=>$phrase,
-
         ]);
     }
 
