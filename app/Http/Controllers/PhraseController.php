@@ -20,10 +20,20 @@ class PhraseController extends Controller
          ]);
     }
 
+    public function indexFlashcards($phraseCategoryId)
+    {
+        $phraseId = Phrase::get()->value('id');
+        $phrases = Phrase::with('phraseCategory')->where('phrase_category_id',$phraseCategoryId)->paginate(1);
+        $memoryAid = MemAid::with('upvotes')->where('phrase_id',$phraseId)->inRandomOrder()->limit(1)->get();
+        // dd($memoryAid);
+        return view('phrases.flashcard', [
+             'phrases' => $phrases,
+             'memoryAid'=>$memoryAid
+         ]);
+    }
+
     public function show($phraseCategoryId,$phraseId)
     {
-
-
         $phrases = Phrase::where('id',$phraseId)->where('phrase_category_id',$phraseCategoryId)->get();
         $memoryAids = MemAid::with('upvotes')->where('phrase_id',$phraseId)->inRandomOrder()->limit(1)->get();
 

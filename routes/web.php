@@ -25,7 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::get('phrase-category',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
-    Route::get('phrase-category/{phraseCateogryId}/phrases/',[PhraseController::class,'index'])->name('phrases.index');
+    Route::get('phrase-category/{phraseCateogryId}/phrases',[PhraseController::class,'index'])->name('phrases.index');
     Route::get('phrase-category/{phraseCateogryId}/phrase/{phraseId}',[PhraseController::class,'show'])->name('phrases.show');
 
 

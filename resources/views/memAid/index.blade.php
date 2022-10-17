@@ -45,7 +45,6 @@
                                      {{ Str::plural('upvote',$memoryAid->upvotes()->count()) }}
                                     </button>
                             </div>
-
                         </div>
 
                         <hr>

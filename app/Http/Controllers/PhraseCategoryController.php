@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PhraseCategory;
+use App\Models\Phrase;
 use Illuminate\Http\Request;
+use App\Models\PhraseCategory;
 
 class PhraseCategoryController extends Controller
 {
@@ -15,7 +16,8 @@ class PhraseCategoryController extends Controller
     public function index()
     {
         $phraseCategories = PhraseCategory::get();
-        return view('phraseCategory.index',compact('phraseCategories'));
+        $phraseId = Phrase::get()->value('id');
+        return view('phraseCategory.index',compact('phraseCategories','phraseId'));
     }
 
     /**

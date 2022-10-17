@@ -15,7 +15,7 @@
                                         src="{{ asset($category->phrase_category_image_cover) }}" alt="lesson-image">
 
                                     <div class="d-flex justify-content-center">
-                                        <a href="{{ route('phrases.index',$category->id) }}" class="btn btn-primary btn-custom ">Gia!</a>
+                                        <a href="{{ route('phrases.index',$category->id) }}" class="btn btn-primary btn-custom ">Gia</a>
                                     </div>
 
                                 </div>

@@ -59,12 +59,12 @@
                                 <div class="gap-2 mb-3">
                                     <p class="small fw-bolder">Audio Pronunciation:</p>
                                     <div class="btn-group" role="group">
-                                        <button class="btn btn-outline-primary" onclick="playAudio()">
+                                        <button class="btn btn-outline-secondary" onclick="playAudio()">
                                             <img src="{{ asset('assets/images/male.png') }}" alt="male-speech-bubble"
                                                 class="pronunciation-img">
                                             Male Pronounce
                                         </button>
-                                        <button class="btn btn-outline-primary" onclick="playAudio2()">
+                                        <button class="btn btn-outline-secondary" onclick="playAudio2()">
                                             <img src="{{ asset('assets/images/female.png') }}" alt="female-speech-bubble"
                                                 class="pronunciation-img" title="Female pronounce">
                                             Female Pronounce
@@ -84,13 +84,6 @@
                                     <input id="pbr" type="range" value="1" min="0.75" max="2"
                                         step="0.25" />
                                 </form>
-
-                                <h2>Memory Aid</h2>
-                                <div class="mb-3">
-                                  @foreach ($memoryAids as $memAid)
-                                      {!! $memAid->memory_aid_content !!}
-                                  @endforeach
-                                </div>
 
 
                                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -114,10 +107,7 @@
 
                                     </button>
 
-                                    <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
-                                        <i class="fa-solid fa-eye"></i>
-                                        Memory Aid
-                                    </a>
+
 
 
 
@@ -131,6 +121,32 @@
 
             </div>
 
+        </div>
+        <h2>Random memory aid for {{ $phrase->phrase_name }}</h2>
+        <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
+            <i class="fa-solid fa-brain"></i>
+            View More Memory Aid
+        </a>
+        <div class="my-3">
+          @forelse($memoryAids as $memAid)
+          <div class="card">
+            <div class="card-body">
+                <p class="card-text">  {!! $memAid->memory_aid_content !!}
+                    <p><span class="fw-bolder">Created by: </span>{{ $memAid->user->username }}</p>
+                    <div class="d-flex justify-content-end">
+                        <div class="btn-group" role="group">
+                            <button disabled="disabled" class="btn btn-info">{{ $memAid->upvotes()->count() }}</button>
+                            <button disabled="disabled" class="btn btn-outline-info">
+                                <i class="fa-solid fa-caret-up"></i>
+                                 {{ Str::plural('upvote',$memAid->upvotes()->count()) }}
+                                </button>
+                        </div>
+                    </div>
+                    @empty
+                    <p>None of the memory aids have been made</p>
+                @endforelse</p>
+            </div>
+          </div>
         </div>
         @endforeach
 

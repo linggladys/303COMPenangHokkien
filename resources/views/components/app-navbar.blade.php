@@ -13,7 +13,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto text-dark">
+                    <ul class="navbar-nav me-auto">
                         <!-- Some WIP Navbars -->
                         <li class="nav-item">
                             <a href="{{ route('home') }}" class="nav-link text-indigo-700">Dashboard</a>
@@ -41,12 +41,12 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('draganddrop.index') }}">
-                                <i class="fa-solid fa-hand-pointer"></i>
+                                <i class="fa-solid fa-up-down-left-right"></i>
                                 Drag and Drop
                             </a>
                             <a class="dropdown-item disabled" href="{{ route('draganddrop.index') }}">
                                 <i class="fa-solid fa-question"></i>
-                                Quiz
+                                Know The Vocab
                             </a>
                         </li>
                         <li class="nav-item">

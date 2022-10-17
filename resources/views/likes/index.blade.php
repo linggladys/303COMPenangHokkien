@@ -33,7 +33,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <table class="table table-striped table-bordered">
                     <h1>Your Liked Phrases</h1>
                     <thead>
@@ -67,15 +67,17 @@
                                 </td>
                             </tr>
                     </tbody>
-
                 @empty
                     <img src="{{ asset('assets/images/frowned.png') }}" alt="notFound" class="mx-auto">
                     It is empty here.
                     @endforelse
                 </table>
             </div>
-            <div class="col-md-5">
-                <div id="piechart" class="chartCustom"></div>
+            <div class="col-md-6">
+                <div class="my-5">
+                     <div id="piechart" class="chartCustom"></div>
+                </div>
+
             </div>
         </div>
     </div>

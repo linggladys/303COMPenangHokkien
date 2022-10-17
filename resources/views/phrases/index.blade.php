@@ -11,7 +11,7 @@
                         <tr>
                             <th scope="col">Phrase</th>
                             <th scope="col">Phrase Meaning</th>
-                            <th scope="col">Phrase Info</th>
+                            <th scope="col">Option</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -19,7 +19,10 @@
                          <td scope="row">{{ $phrase->phrase_name }}</td>
                             <td>{{ $phrase->phrase_meaning }}</td>
                             <td>
-                                <a href="{{ route('phrases.show',['phraseCateogryId'=>$phrase->phrase_category_id,'phraseId'=>$phrase->id]) }}" class="btn btn-primary">View Phrase Info</a>
+                                <a href="{{ route('phrases.show',['phraseCateogryId'=>$phrase->phrase_category_id,'phraseId'=>$phrase->id]) }}" class="btn btn-primary">
+                                    <i class="fa-solid fa-eye"></i>
+                                    View Phrase Info
+                                </a>
                             </td>
                         </tr>
                         @endforeach

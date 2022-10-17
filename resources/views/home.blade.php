@@ -30,8 +30,8 @@
                 <div class="row">
                     <h4>Most liked words from users</h4>
                     @foreach ($phrase as $phraseItem)
-                    <div class="col-md-3">
-                        <div class="card border-primary text-center">
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-light text-center">
                           <div class="card-body">
 
                             <a href={{ route('phrases.show',['phraseCateogryId'=>$phraseItem->phrase_category_id,'phraseId'=>$phraseItem->id]) }} class="card-title text-decoration-none">{{ $phraseItem->phrase_name}}</a>
@@ -42,7 +42,7 @@
                     @endforeach
 
                     <div class="col-md-6">
-                        test
+
                     </div>
                 </div>
             </div>

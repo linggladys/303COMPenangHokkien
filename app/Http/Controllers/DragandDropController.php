@@ -13,7 +13,7 @@ class DragandDropController extends Controller
 
         $phraseCategories = PhraseCategory::get();
         // dd($phraseCategoryId);
-        return view('games.draganddrop_index',[
+        return view('games.draganddrop.draganddrop_index',[
             'phraseCategories' => $phraseCategories,
 
         ]);
@@ -24,7 +24,7 @@ class DragandDropController extends Controller
     {
         $phrases = Phrase::where("phrase_category_id",$phraseCategoryId)->inRandomOrder()->limit(10)->get();
         // dd($phrases);
-        return view('games.draganddrop_phrase',[
+        return view('games.draganddrop.draganddrop_phrase',[
             'phrases'=>$phrases
         ]);
     }
@@ -35,7 +35,7 @@ class DragandDropController extends Controller
         // dd($phrases);
         $phraseId = Phrase::where("phrase_category_id",$phraseCategoryId)->value('phrase_category_id');
         // dd($phraseId);
-        return view('games.draganddrop_audiomatch_male',[
+        return view('games.draganddrop.draganddrop_audiomatch_male',[
             'phrases'=>$phrases,
             'phraseId'=>$phraseId
         ]);
@@ -45,7 +45,7 @@ class DragandDropController extends Controller
     {
         $phrases = Phrase::where("phrase_category_id",$phraseCategoryId)->inRandomOrder()->limit(10)->get();
         $phraseId = Phrase::where("phrase_category_id",$phraseCategoryId)->value('phrase_category_id');
-        return view('games.draganddrop_audiomatch_female',[
+        return view('games.draganddrop.draganddrop_audiomatch_female',[
             'phrases'=>$phrases,
             'phraseId'=>$phraseId
         ]);
