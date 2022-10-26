@@ -20,10 +20,11 @@
             title: 'My Liked Words Per Category',
             fontName: 'Poppins',
             width: 400,
-            height: 400
+            height: 400,
+            pieHole: 0.4
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
 
 
         chart.draw(data, options);
@@ -75,9 +76,8 @@
             </div>
             <div class="col-md-6">
                 <div class="my-5">
-                     <div id="piechart" class="chartCustom"></div>
+                     <div id="donutchart" class="chartCustom"></div>
                 </div>
-
             </div>
         </div>
     </div>

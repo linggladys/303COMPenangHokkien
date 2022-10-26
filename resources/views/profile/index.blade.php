@@ -28,28 +28,13 @@
                         @endif
                     </div>
 
-                    <div class="btn-group mb-3" role="group" aria-label="Some activities">
-                        <button type="button" class="btn btn-outline-dark">
-                            <i class="fa-solid fa-comment-dots"></i>
-                            4 responses
-                        </button>
-                        <button type="button" class="btn btn-outline-dark">
-                            <i class="fa-solid fa-star"></i>
-                            2 starred responses
-                        </button>
-                    </div>
-
                     <div class="mb-3">
                         <h4 class=fw-bolder">{{ $userData->name }} <span class="username-display fw-bold text-indigo-400">
                                 {{ $userData->username }}
                             </span></h4>
-                        <p class="fw-bolder small">Last login: <span
-                                class="fw-lighter">{{ date('d-m-Y, H:i:s', strtotime($userData->last_login)) }}</span></p>
+                        <p class="fw-bolder small">Last logged in: <span
+                                class="fw-lighter">{{ date('d-m-Y, H:i', strtotime($userData->last_login)) }}</span></p>
                     </div>
-
-
-
-
 
                     <div class="mb-3">
                         <a href="{{ route('profile.edit') }}" class="btn btn-secondary">
@@ -58,7 +43,7 @@
                         </a>
                         <a href="{{ route('profile.changePassword') }}" class="btn btn-dark">
                             <i class="fa-solid fa-key"></i>
-                            Change Password
+                            Edit Password
                         </a>
                     </div>
                 </div>

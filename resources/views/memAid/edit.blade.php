@@ -6,7 +6,6 @@
         <x-app-page-header>Edit Memory Aid for {{ $memoryAid->phrase->phrase_name }}</x-app-page-header>
         <div class="row">
             <div class="col-md-12">
-
                 <form action="{{ route('memaid.update',$memoryAid->id) }}" method="POST">
                     @csrf
                     @method('PUT')

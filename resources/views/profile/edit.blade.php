@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('title', 'User Profile')
 @section('content')
-    <div class="row justify-content-center">
+<div class="container">
+   <div class="row justify-content-center">
         <div class="col-md-6">
+            <x-app-page-header>Edit User Profile</x-app-page-header>
             <div class="card">
                 <div class="card-body">
                     @if ($errors->any())
@@ -18,9 +20,6 @@
                 @endif
                     <form method="POST" action="{{ route('profile.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <h5 class="card-title fw-bolder">
-                            Edit User Profile
-                        </h5>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-flex justify-content-center mb-3">
@@ -72,6 +71,8 @@
             </div>
         </div>
     </div>
+</div>
+
     @push('scripts')
        <script type="module">
 

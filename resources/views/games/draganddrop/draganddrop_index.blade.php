@@ -25,7 +25,6 @@
                                 </div>
 
                                 <div class="card-body text-center">
-                                    <span class="badge rounded-pill text-bg-secondary">Word Count: {{ count($category->phrases) }}</span>
                                     <h4 class="card-title fw-bolder">{{ $category->phrase_category_name }}</h4>
                                     <p class="card-text">{{ $category->phrase_category_description }}</p>
                                 </div>

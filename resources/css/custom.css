@@ -198,3 +198,10 @@ input[type="range"]:focus::-moz-range-thumb {
 .draggable-list > li.over {
     background-color: #9c88ff;
 }
+
+/* image quiz container */
+.quiz-image-container {
+    object-fit: cover;
+    width: 300px;
+    height: auto;
+}

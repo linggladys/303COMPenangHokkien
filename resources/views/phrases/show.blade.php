@@ -107,10 +107,6 @@
 
                                     </button>
 
-
-
-
-
                                 </div>
 
                             </div>
@@ -118,38 +114,51 @@
                         </div>
 
                     </div>
-
             </div>
-
         </div>
-        <h2>Random memory aid for {{ $phrase->phrase_name }}</h2>
-        <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
-            <i class="fa-solid fa-brain"></i>
-            View More Memory Aid
-        </a>
+
         <div class="my-3">
-          @forelse($memoryAids as $memAid)
-          <div class="card">
-            <div class="card-body">
-                <p class="card-text">  {!! $memAid->memory_aid_content !!}
-                    <p><span class="fw-bolder">Created by: </span>{{ $memAid->user->username }}</p>
-                    <div class="d-flex justify-content-end">
-                        <div class="btn-group" role="group">
-                            <button disabled="disabled" class="btn btn-info">{{ $memAid->upvotes()->count() }}</button>
-                            <button disabled="disabled" class="btn btn-outline-info">
-                                <i class="fa-solid fa-caret-up"></i>
-                                 {{ Str::plural('upvote',$memAid->upvotes()->count()) }}
-                                </button>
-                        </div>
+            <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
+            <i class="fa-solid fa-brain"></i>
+            View More Memory Aids From Users
+        </a>
+        @forelse ($memoryAids as $memoryAid)
+        <h2>Memory Aid for {{ $memoryAid->phrase->phrase_name }}</h2>
+            <div class="card border-primary p-3 mb-3 text-center">
+                <p class="card-text">
+                    <span class="span-text-hover fw-light">Created by: </span>
+                    @if ($memoryAid->user->profile_image)
+                        <img src="{{ asset('uploads/user_images/' . $memoryAid->user->profile_image) }}"
+                            alt="user-image-profile" class="icon-avatar"
+                            title="{{ $memoryAid->user->username }}'s profile pic" />
+                    @else
+                        <img src="{{ asset('assets/images/user.png') }}" alt="user-image-profile-unavailable"
+                            class="icon-avatar">
+                    @endif
+                    {{ $memoryAid->user->username }}
+                </p>
+                {!! $memoryAid->memory_aid_content !!}
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <button disabled="disabled"
+                            class="btn btn-info">{{ $memoryAid->upvotes()->count() }}</button>
+                        <button disabled="disabled" class="btn btn-outline-info">
+                            <i class="fa-solid fa-caret-up"></i>
+                            {{ Str::plural('upvote', $memoryAid->upvotes()->count()) }}
+                        </button>
                     </div>
-                    @empty
-                    <p>None of the memory aids have been made</p>
-                @endforelse</p>
-            </div>
-          </div>
-        </div>
-        @endforeach
+                </div>
+                @empty
+                <p class="text-center my-5">
+                    None of the memory aids have been made from {{ Auth::user()->username }}
+                </p>
+                @endforelse
 
+            </div>
+
+
+        </div>
+    @endforeach
     </div>
 
     </div>

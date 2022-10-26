@@ -37,4 +37,5 @@ class MemAid extends Model
     {
         return $this->hasMany(Upvote::class);
     }
+
 }

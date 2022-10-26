@@ -26,7 +26,7 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('phrasesCategory.index') }}">
                                     <i class="fa-solid fa-list"></i>
-                                    List of Categories
+                                    List of Phrase Categories
                                 </a>
                                 <a class="dropdown-item" href="{{ route('likedphraselist.likes') }}">
                                     <i class="fa-solid fa-thumbs-up"></i>
@@ -44,14 +44,11 @@
                                 <i class="fa-solid fa-up-down-left-right"></i>
                                 Drag and Drop
                             </a>
-                            <a class="dropdown-item disabled" href="{{ route('draganddrop.index') }}">
-                                <i class="fa-solid fa-question"></i>
-                                Know The Vocab
+                            <a class="dropdown-item" href="{{ route('quiz.index') }}">
+                                <i class="fa-solid fa-circle-question"></i>
+                                Quiz
                             </a>
                         </li>
-                        <li class="nav-item">
-                        <a href="#" class="nav-link disabled">Q-n-a Pronunciation</a>
-                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

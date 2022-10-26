@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\DragandDropController;
-use App\Http\Controllers\GameController;
-use App\Http\Controllers\LessonController;
+use App\Http\Controllers\KnowVocabController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MemAidController;
 use App\Http\Controllers\PhraseCategoryController;
 use App\Http\Controllers\PhraseController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\SelectedMemAidController;
 use App\Http\Controllers\UpvoteController;
 use App\Http\Controllers\User\ProfileController;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes(['verify'=>true]);
@@ -49,17 +49,22 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::put('phrase/{phraseId}/memory-aid/update',[MemAidController::class,'update'])->name('memaid.update');
     Route::delete('phrase/{phraseId}/memory-aid/delete',[MemAidController::class,'destroy'])->name('memaid.destroy');
 
-    Route::get('phrase/games/draganddrop',[DragandDropController::class,'index'])->name('draganddrop.index');
-    Route::get('phrase/games/draganddropbyphrase/{phraseCategoryId}',[DragandDropController::class,'dragByPhrase'])->name('draganddropphrase.index');
-    Route::get('phrase/games/draganddropbyaudio-male/{phraseCategoryId}',[DragandDropController::class,'dragByAudioMale'])->name('draganddropaudiomale.index');
-    Route::get('phrase/games/draganddropbyaudio-female/{phraseCategoryId}',[DragandDropController::class,'dragByAudioFemale'])->name('draganddropaudiofemale.index');
+    Route::get('games/draganddrop',[DragandDropController::class,'index'])->name('draganddrop.index');
+    Route::get('games/draganddropbyphrase/{phraseCategoryId}',[DragandDropController::class,'dragByPhrase'])->name('draganddropphrase.index');
+    Route::get('games/draganddropbyaudio-male/{phraseCategoryId}',[DragandDropController::class,'dragByAudioMale'])->name('draganddropaudiomale.index');
+    Route::get('games/draganddropbyaudio-female/{phraseCategoryId}',[DragandDropController::class,'dragByAudioFemale'])->name('draganddropaudiofemale.index');
 
     Route::post('/memory-aid/{memAid}/upvotes',[UpvoteController::class,'store'])->name('memaid.upvotes');
     Route::delete('/memory-aid/{memAid}/upvotes',[UpvoteController::class,'destroy'])->name('memaid.upvotes');
 
-    Route::post('memory-aid/{memAid}/select-as-memory-aid',[SelectedMemAidController::class,'store'])->name('memaid.selected');
+    Route::get('games/quiz',[QuizController::class,'index'])->name('quiz.index');
+    Route::get('games/quiz/quizPhraseCategoryInfo/{phraseCategoryId}',[QuizController::class,'quizInfo'])->name('quiz.quizInfo');
+    Route::get('games/quiz/quizStatistics',[QuizController::class,'quizStatistics'])->name('quiz.quizStatistics');
+    Route::get('games/quiz/{phraseCategoryId}',[QuizController::class,'startQuiz'])->name('quiz.quizStart');
+    Route::post('games/quiz/{phraseCategoryId}/result',[QuizController::class,'quizResult'])->name('quiz.quizResult');
+    Route::get('games/quiz/{phraseCategoryId}/review',[QuizController::class,'quizReview'])->name('quiz.quizReview');
 
 });
 
-Route::get('games',GameController::class);
+
 

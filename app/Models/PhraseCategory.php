@@ -15,6 +15,16 @@ class PhraseCategory extends Model
 
     public function phrases()
     {
-        return $this->hasMany(Phrase::class, 'phrase_category_id');
+        return $this->hasMany(Phrase::class, "phrase_category_id");
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(QuizQuestion::class)->limit(10);
+    }
+
+    public function userResult()
+    {
+        return $this->hasOne(QuizResult::class)->where('user_id',auth()->user()->id);
     }
 }

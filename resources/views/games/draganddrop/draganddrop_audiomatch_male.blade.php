@@ -27,7 +27,7 @@
                 <div class="col-6">
                          <ul class="draggable-list">
                             @foreach ($phrases as $phrase)
-                            <li id="hokkien{{ $loop->iteration }}" draggable="true" onclick="playAudio()">
+                            <li id="hokkien{{ $loop->iteration }}" draggable="true">
                                 <audio preload="none" id="myAudio" controls controlsList="nodownload">
                                     <source src="{{ asset($phrase->phrase_pronunciation_audio_m) }}" type="audio/mpeg"/>
                                     Your browser does not support the audio element.

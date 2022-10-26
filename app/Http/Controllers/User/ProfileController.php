@@ -90,7 +90,7 @@ class ProfileController extends Controller
 
     public function changePassword()
     {
-        return view('profile.change-password');
+        return view('profile.change_password');
     }
 
     public function updatePassword(Request $request)

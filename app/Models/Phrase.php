@@ -22,6 +22,7 @@ class Phrase extends Model
         return $this->likes->contains('user_id',$user->id);
     }
 
+
     public function phraseCategory()
     {
         return $this->belongsTo(PhraseCategory::class);
@@ -37,4 +38,6 @@ class Phrase extends Model
     {
         return $this->hasMany(MemAid::class);
     }
+
+
 }

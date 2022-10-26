@@ -24,6 +24,7 @@ class MemAidController extends Controller
         ]);
     }
 
+
     public function create($phraseId)
     {
         $phrase = Phrase::with('memoryAid')->find($phraseId);

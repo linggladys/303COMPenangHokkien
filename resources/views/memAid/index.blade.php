@@ -39,11 +39,12 @@
                         {!! $memoryAid->memory_aid_content !!}
                         <div class="d-flex justify-content-end">
                             <div class="btn-group" role="group">
-                                <button disabled="disabled" class="btn btn-info">{{ $memoryAid->upvotes()->count() }}</button>
+                                <button disabled="disabled"
+                                    class="btn btn-info">{{ $memoryAid->upvotes()->count() }}</button>
                                 <button disabled="disabled" class="btn btn-outline-info">
                                     <i class="fa-solid fa-caret-up"></i>
-                                     {{ Str::plural('upvote',$memoryAid->upvotes()->count()) }}
-                                    </button>
+                                    {{ Str::plural('upvote', $memoryAid->upvotes()->count()) }}
+                                </button>
                             </div>
                         </div>
 
@@ -52,25 +53,18 @@
                             <span class="fw-bold">Created:</span> {{ date('d-m-Y', strtotime($memoryAid->created_at)) }}
                             at {{ date('g:i A', strtotime($memoryAid->created_at)) }}
                         <div class="d-flex justify-content-end gap-2">
-                            <form action="{{ route('memaid.selected',$memoryAid->id) }}" method="post">
-                                @csrf
-                            <button class="btn btn-secondary">Select This Memory Aid</button>
-                        </form>
                             @if (!$memoryAid->upvotedBy(auth()->user()))
                                 <form action="{{ route('memaid.upvotes', $memoryAid->id) }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary">Like</button>
+                                    <button type="submit" class="btn btn-primary">Upvote</button>
                                 </form>
                             @else
-                                <form action="{{ route('memaid.upvotes',$memoryAid->id) }}" method="post">
+                                <form action="{{ route('memaid.upvotes', $memoryAid->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-primary">Disike</button>
+                                    <button type="submit" class="btn btn-danger">Remove from Upvotes</button>
                                 </form>
                             @endif
-
-
-
                         </div>
                         </p>
                     </div>
@@ -82,13 +76,7 @@
 
             <hr>
 
-            <x-app-page-header>User Created Memory Aids
-                <div class="d-flex justify-content-start">
-                    <a href="{{ route('memaid.create', $phrasesoloId) }}" class="btn btn-secondary ">
-                        <i class="fa-solid fa-plus"></i>
-                        Create a memory aid
-                    </a>
-                </div>
+            <x-app-page-header>User Created Memory Aid
             </x-app-page-header>
             @forelse ($userMemAids as $userMemAid)
                 <div class="card mb-3">
@@ -115,6 +103,10 @@
                 </div>
             @empty
                 No user created memory aids available
+                <a href="{{ route('memaid.create', $phrasesoloId) }}" class="btn btn-secondary ">
+                    <i class="fa-solid fa-plus"></i>
+                    Create a memory aid
+                </a>
             @endforelse
 
         </div>

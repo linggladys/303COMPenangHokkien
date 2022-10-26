@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Like;
-use App\Models\Phrase;
-use App\Models\User;
+use App\Models\MemAid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +30,10 @@ class HomeController extends Controller
         $userId = auth()->user()->id;
 
         // number of likes from authenticated users
-        $likes = Like::with('user')->where('user_id',$userId)->count();
+        $likesCount = Like::with('user')->where('user_id',$userId)->count();
+
+        // number of created memory aids from authenticated users
+        $memAidsCount = MemAid::with('user')->where('user_id',$userId)->count();
 
         $phrase = DB::table('likes')
         ->select('phrases.phrase_name','phrases.id','phrase_categories.id as phrase_category_id', DB::raw('count(likes.id) as count_likes'))
@@ -42,12 +44,11 @@ class HomeController extends Controller
         ->take(4)
         ->get();
 
-
-
         // dd($phrase);
         return view('home',[
-            'likes' => $likes,
+            'likesCount' => $likesCount,
             'phrase'=>$phrase,
+            'memAidsCount' => $memAidsCount
         ]);
     }
 
