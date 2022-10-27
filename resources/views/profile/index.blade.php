@@ -29,8 +29,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <h4 class=fw-bolder">{{ $userData->name }} <span class="username-display fw-bold text-indigo-400">
-                                {{ $userData->username }}
+                        <h4> Wa mia <span class="span-text-hover fw-bolder text-indigo-400">{{ $userData->name }}
                             </span></h4>
                         <p class="fw-bolder small">Last logged in: <span
                                 class="fw-lighter">{{ date('d-m-Y, H:i', strtotime($userData->last_login)) }}</span></p>

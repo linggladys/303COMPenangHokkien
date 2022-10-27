@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DragandDropController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KnowVocabController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MemAidController;
@@ -14,16 +15,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Auth::routes(['verify'=>true]);
 
 Route::name('auth.resend_confirmation')->get('/register/confirm/resend', 'Auth\RegisterController@resendConfirmation');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['verified']);
+Route::get('/user/home', [HomeController::class, 'index'])->name('home')->middleware(['verified']);
 
 Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
+
     Route::get('phrase-category',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
     Route::get('phrase-category/{phraseCateogryId}/phrases',[PhraseController::class,'index'])->name('phrases.index');
     Route::get('phrase-category/{phraseCateogryId}/phrase/{phraseId}',[PhraseController::class,'show'])->name('phrases.show');
@@ -65,6 +67,7 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
     Route::get('games/quiz/{phraseCategoryId}',[QuizController::class,'startQuiz'])->name('quiz.quizStart');
     Route::post('games/quiz/{phraseCategoryId}/result',[QuizController::class,'quizResult'])->name('quiz.quizResult');
     Route::get('games/quiz/{phraseCategoryId}/review',[QuizController::class,'quizReview'])->name('quiz.quizReview');
+
 
 });
 

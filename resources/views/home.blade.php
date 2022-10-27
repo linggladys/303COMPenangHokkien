@@ -4,12 +4,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <x-app-page-header>Halo, {{ Auth::user()->name }}</x-app-page-header>
+                <x-app-page-header>Ha lo, {{ Auth::user()->name }}</x-app-page-header>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card bg-white bg-indigo-100  mb-3">
                             <div class="card-body">
-                                <h4>Liked {{ Str::plural('phrase',$likesCount) }}</h4>
+                                <h4 class="card-title span-text-hover">Liked {{ Str::plural('phrase',$likesCount) }}</h4>
                                 <div class="d-flex justify-content-end">
                                     <i class="fa-solid fa-thumbs-up home-statistic-cards-icon"></i>
                                </div>
@@ -21,7 +21,7 @@
                     <div class="col-md-3">
                         <div class="card bg-white bg-indigo-100 mb-3">
                             <div class="card-body">
-                                <h4 class="card-title">Amount of  {{ Str::plural('login',Auth::user()->amount_of_logins) }}</h4>
+                                <h4 class="card-title span-text-hover">Amount of  {{ Str::plural('login',Auth::user()->amount_of_logins) }}</h4>
                                 <div class="d-flex justify-content-end">
                                     <i class="fa-solid fa-sign-in-alt home-statistic-cards-icon"></i>
                                </div>
@@ -33,7 +33,7 @@
                     <div class="col-md-3">
                         <div class="card bg-white bg-indigo-100 mb-3">
                             <div class="card-body">
-                                <h4 class="card-title">Created {{ Str::plural('memory aid',$memAidsCount) }}</h4>
+                                <h4 class="card-title span-text-hover">Created {{ Str::plural('memory aid',$memAidsCount) }}</h4>
                                 <div class="d-flex justify-content-end">
                                      <i class="fa-solid fa-brain home-statistic-cards-icon"></i>
                                 </div>

@@ -14,7 +14,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto ">
-                        <!-- Some WIP Navbars -->
                         <li class="nav-item">
                             <a href="{{ route('home') }}" class="nav-link text-indigo-600">Dashboard</a>
                         </li>

@@ -15,12 +15,16 @@
                                     <img class="card-img-top d-block position-absolute"
                                         src="{{ asset($category->phrase_category_image_cover) }}" alt="lesson-image">
 
-                                    <div class="d-flex justify-content-center">
                                         <!-- Hover added -->
+                                        <a href="{{ route('draganddropphrase.index',$category->id) }}" class="btn btn-primary btn-custom ">
+                                            <i class="fa-solid fa-list-ul"></i>
+                                            Drag Via Phrase
+                                        </a>
+                                        <a href="{{ route('draganddropaudiomale.index',$category->id) }}" class="btn btn-secondary btn-custom ">
+                                            <i class="fa-solid fa-ear-listen"></i>
+                                            Drag Via Pronunciation
+                                        </a>
 
-                                        <a href="{{ route('draganddropphrase.index',$category->id) }}" class="btn btn-primary btn-custom ">Drag Via Phrase</a>
-                                        <a href="{{ route('draganddropaudiomale.index',$category->id) }}" class="btn btn-primary btn-custom ">Drag Via Listening Pronunciation</a>
-                                    </div>
 
                                 </div>
 
