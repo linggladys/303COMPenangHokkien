@@ -26,7 +26,7 @@
                     </button>
                 </div>
                 @foreach ($phrases as $phrase)
-                    <div class="card mb-3 custom-card bg-light" id="card">
+                    <div class="card mb-3 custom-card bg-white" id="card">
                         <div class="front">
                             <div class="card-body text-center">
                                     @if ($phrase->phrase_image)
@@ -118,13 +118,9 @@
         </div>
 
         <div class="my-3">
-            <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
-            <i class="fa-solid fa-brain"></i>
-            View More Memory Aids From Users
-        </a>
         @forelse ($memoryAids as $memoryAid)
-        <h2>Memory Aid for {{ $memoryAid->phrase->phrase_name }}</h2>
-            <div class="card border-primary p-3 mb-3 text-center">
+        <h2>Memory Aid for {{ $memoryAid->phrase->phrase_name }} created by you</h2>
+            <div class="card bg-white border-primary p-3 mb-3 text-center">
                 <p class="card-text">
                     <span class="span-text-hover fw-light">Created by: </span>
                     @if ($memoryAid->user->profile_image)
@@ -151,12 +147,18 @@
                 @empty
                 <p class="text-center my-5">
                     None of the memory aids have been made from {{ Auth::user()->username }}
+                    <br>
+                    <a  class="btn btn-primary" href="{{ route('memaid.create',$phrase->id) }}" role="button">Create Your Memory Aid Here</a>
                 </p>
                 @endforelse
 
             </div>
-
-
+            <div class="d-flex justify-content-center">
+              <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
+                <i class="fa-solid fa-brain"></i>
+                View More Memory Aids From Users
+            </a>
+            </div>
         </div>
     @endforeach
     </div>

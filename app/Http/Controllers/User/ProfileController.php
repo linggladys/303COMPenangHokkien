@@ -5,8 +5,11 @@ namespace App\Http\Controllers\User;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\SendOtp;
+use App\Models\EmailOtp;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
@@ -20,16 +23,6 @@ class ProfileController extends Controller
         $id = Auth::user()->id;
         $userData = User::find($id);
         return view('profile.index',compact('userData'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -63,18 +56,6 @@ class ProfileController extends Controller
 
         return redirect(route('profile.index'))->withSuccess('User Profile Edited With Success! ');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -107,6 +88,21 @@ class ProfileController extends Controller
             $users = User::find(Auth::id());
             // access users password
             $users->password = bcrypt($request->new_password);
+            // OTP create around 2 to 4 digits
+            $otp = rand(10,9999);
+
+            EmailOtp::create([
+                'user_id' =>auth()->user()->id,
+                'otp'=>$otp
+            ]);
+
+            session(['new_password' => $request->new_password]);
+            if(Mail::to(auth()->user()->email)->send(new SendOtp($otp))){
+                return redirect(route('profile.confirmOTP'));
+            }else{
+                return abort(404);
+            }
+
             $users->save();
 
             return redirect(route('profile.index'))->withSuccess('User Password Edited With Success! ');
@@ -116,16 +112,21 @@ class ProfileController extends Controller
 
     }
 
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function confirmOTP()
     {
-        //
+        return view('profile.confirm_otp');
+    }
+
+    public function validateOTP(Request $request)
+    {
+        $otp = EmailOtp::where(['user_id'=> auth()->user()->id, 'otp'=>$request->otp])->first();
+        if($otp != null){
+            auth()->user()->update(
+                ['password'=>Hash::make(session('new_password'))
+            ]);
+            return redirect(route('profile.index'))->withSuccess('User Password Edited With Success! ');
+        }else{
+            return back()->withFailures('You have entered the wrong OTP.');
+        }
     }
 }

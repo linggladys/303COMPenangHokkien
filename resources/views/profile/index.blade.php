@@ -17,11 +17,11 @@
         @endif
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card align-items-center">
+                <div class="card bg-white align-items-center">
                     <div class="d-flex justify-content-center m-3">
                         @if ($userData->profile_image)
                             <img src="{{ asset('uploads/user_images/' . $userData->profile_image) }}"
-                                alt="user-image-profile" class="rounded-circle" id="showProfileImage">
+                                alt="user-image-profile" class="rounded-circle" id="showProfileImage" title="{{ auth()->user()->username }}'s profile pic">
                         @else
                             <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
                                 class="img-fluid img-thumbnail">
@@ -36,7 +36,7 @@
                                 class="fw-lighter">{{ date('d-m-Y, H:i', strtotime($userData->last_login)) }}</span></p>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 btn-group" role="group">
                         <a href="{{ route('profile.edit') }}" class="btn btn-secondary">
                             <i class="fa-solid fa-pencil"></i>
                             Edit Profile

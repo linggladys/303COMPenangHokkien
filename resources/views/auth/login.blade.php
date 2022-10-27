@@ -1,6 +1,5 @@
-@section('title', 'Login')
 @extends('layouts.app')
-
+@section('title', 'Login')
 @section('content')
     <x-app-auth-card>
         <form method="POST" action="{{ route('login') }}">
@@ -63,7 +62,7 @@
             </div>
 
             @if (Route::has('password.request'))
-                <a class="btn btn-link d-flex justify-content-center" href="{{ route('password.request') }}">
+                <a class="btn btn-link d-flex justify-content-center text-decoration-none text-indigo-400" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif

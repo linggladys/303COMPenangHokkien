@@ -35,6 +35,8 @@ Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
 
     Route::get('/profile/change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
     Route::post('/profile/change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
+    Route::get('/profile/change-password/confirm-otp',[ProfileController::class,'confirmOTP'])->name('profile.confirmOTP');
+    Route::post('/profile/change-password/validate-otp',[ProfileController::class,'validateOTP'])->name('profile.validateOTP');
 
 
     Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');

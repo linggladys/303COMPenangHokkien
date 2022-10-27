@@ -8,7 +8,7 @@
                 <span class="span-text-hover fw-bolder">Last Scored Points: </span>{{ $latestScoredPoints }}
             </h3>
             @foreach ($phraseCategory->questions as $question)
-                <div class="card mb-3">
+                <div class="card bg-white mb-3">
                     <div class="card-body">
                         @if ($question->correct_answer == $question->user_answer->answer)
                             <i class="fa-solid fa-check text-success"></i>

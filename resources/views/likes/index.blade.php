@@ -35,7 +35,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <table class="table table-striped table-bordered">
+                <table class="table bg-white text-indigo-600 table-bordered">
                     <h1>Your Liked Phrases</h1>
                     <thead>
                         <tr>

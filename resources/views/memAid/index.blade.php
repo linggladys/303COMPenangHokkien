@@ -34,7 +34,7 @@
                                 <img src="{{ asset('assets/images/user.png') }}" alt="user-image-profile-unavailable"
                                     class="icon-avatar">
                             @endif
-                            {{ $memoryAid->user->username }}
+                            <span class="span-text-hover">{{ $memoryAid->user->username }}</span>
                         </p>
                         {!! $memoryAid->memory_aid_content !!}
                         <div class="d-flex justify-content-end">

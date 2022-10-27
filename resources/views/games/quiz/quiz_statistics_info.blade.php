@@ -44,12 +44,12 @@
             <h2 class="span-text-hover">Latest Score from Quiz</h2>
             @foreach ($latestScore as $latestScoreItem)
             <div class="col-md-3 mb-3">
-                <div class="card bg-light text-center">
+                <div class="card bg-white text-center">
                             <div class="card-body">
                                 <h4>{{ $latestScoreItem->phrase_category_name }}</h4>
                                 <hr>
                                 <p class="card-text">
-                                    {{ $latestScoreItem->points }}
+                                    {{ $latestScoreItem->points }} points
                                     </p>
                             </div>
                         </div>

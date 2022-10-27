@@ -1,0 +1,58 @@
+@extends('layouts.app')
+@section('title', 'User Profile Password Change')
+@section('content')
+    <div class="container">
+        @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fa-solid fa-face-smile" style="font-size: 18pt"></i>
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @elseif(session('failures'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa-solid fa-face-frown" style="font-size: 18pt"></i>
+            {{ session('failures') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <x-app-page-header>OTP Verfication</x-app-page-header>
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('profile.validateOTP') }}">
+                            @csrf
+
+                            <div class="row mb-3">
+                                <label for="otp" class="col-md-4 col-form-label text-md-end">Enter The Provided
+                                    OTP</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password"
+                                        class="form-control @error('otp') is-invalid @enderror" name="otp" required
+                                        autocomplete="new_password">
+
+                                    @error('otp')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Confirm OTP') }}
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection

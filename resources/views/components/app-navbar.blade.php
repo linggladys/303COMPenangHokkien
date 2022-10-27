@@ -1,6 +1,6 @@
 <div>
     @auth
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-custom">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img src="{{ asset('assets/logos/logo.png') }}" alt="logo" class="navbar-application-logo">
@@ -13,41 +13,42 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto ">
                         <!-- Some WIP Navbars -->
                         <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link text-indigo-700">Dashboard</a>
+                            <a href="{{ route('home') }}" class="nav-link text-indigo-600">Dashboard</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-indigo-700" href="#" role="button"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-indigo-600" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Phrases
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('phrasesCategory.index') }}">
+                            <div class="dropdown-menu dropdown-menu-end bg-white" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-indigo-600" href="{{ route('phrasesCategory.index') }}">
                                     <i class="fa-solid fa-list"></i>
                                     List of Phrase Categories
                                 </a>
-                                <a class="dropdown-item" href="{{ route('likedphraselist.likes') }}">
+                                <a class="dropdown-item text-indigo-600" href="{{ route('likedphraselist.likes') }}">
                                     <i class="fa-solid fa-thumbs-up"></i>
                                      Liked Phrases
                                 </a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-indigo-700" href="#" role="button"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-indigo-600" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Games
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('draganddrop.index') }}">
-                                <i class="fa-solid fa-up-down-left-right"></i>
-                                Drag and Drop
-                            </a>
-                            <a class="dropdown-item" href="{{ route('quiz.index') }}">
+                        <div class="dropdown-menu dropdown-menu-end bg-white" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-indigo-600" href="{{ route('quiz.index') }}">
                                 <i class="fa-solid fa-circle-question"></i>
                                 Quiz
                             </a>
+                            <a class="dropdown-item text-indigo-600" href="{{ route('draganddrop.index') }}">
+                                <i class="fa-solid fa-up-down-left-right"></i>
+                                Drag and Drop
+                            </a>
+
                         </li>
                     </ul>
 
@@ -63,24 +64,24 @@
                         @endif
                         <!-- Authentication Links -->
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link text-indigo-700 dropdown-toggle" href="#"
+                            <a id="navbarDropdown" class="nav-link text-indigo-600 dropdown-toggle" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->username }}
                             </a>
 
 
+                            <div class="dropdown-menu dropdown-menu-end bg-white" style="margin: 0" aria-labelledby="navbarDropdown">
 
-                            <div class="dropdown-menu dropdown-menu-end bg-light" style="margin: 0" aria-labelledby="navbarDropdown">
 
                                 {{-- Redirect to User Profile --}}
-                                <a class="dropdown-item text-indigo-700" href="{{ route('profile.index') }}">
+                                <a class="dropdown-item text-indigo-600" href="{{ route('profile.index') }}">
                                     <i class="fa-solid fa-user"></i>
                                     Profile
                                 </a>
 
 
                                 {{-- Redirect to logout --}}
-                                <a class="dropdown-item text-indigo-700" href="{{ route('logout') }}"
+                                <a class="dropdown-item text-indigo-600" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-sign-out-alt"></i>

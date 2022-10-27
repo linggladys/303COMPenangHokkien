@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             @foreach ($phraseCategory->questions->shuffle() as $question)
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{ route('quiz.quizResult',$question->phrase_category_id) }}" method="POST">
                         @csrf

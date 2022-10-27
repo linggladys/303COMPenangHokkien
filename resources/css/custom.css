@@ -1,4 +1,3 @@
-
 /*NAVBAR*/
 /* the application logo displayed at left side of the navbar */
 .navbar-application-logo {
@@ -150,7 +149,6 @@ input[type="range"]:focus::-moz-range-thumb {
 .custom-card {
     position: relative;
     transform-style: preserve-3d;
-    transition: all 0.8s ease;
 }
 
 .front {
@@ -192,7 +190,7 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 
 .grid-drag {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .draggable-list > li.over {
@@ -204,4 +202,19 @@ input[type="range"]:focus::-moz-range-thumb {
     object-fit: cover;
     width: 300px;
     height: auto;
+}
+
+/* custom shadow from the navbar */
+.shadow-custom {
+    box-shadow: 0 0.125em 0.25rem rgba(182, 176, 248, 0.633);
+}
+
+/* statistics card icon */
+.home-statistic-cards-icon {
+    font-size: 30pt;
+    text-shadow: 5px 0px 1px #c1b8f5;
+}
+
+#toggle-dark-mode-padding{
+    padding-left: 3em;
 }

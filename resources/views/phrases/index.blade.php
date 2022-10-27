@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table bg-light text-indigo-600">
                     <thead>
                         <tr>
                             <th scope="col">Phrase</th>
@@ -33,33 +33,5 @@
 
     </div>
     </div>
-    @push('scripts')
-    <script type="text/javascript">
-        let x = document.getElementById("myAudio");
-        let x2 = document.getElementById("myAudio2");
-
-        function playAudio() {
-            x.play();
-
-        }
-
-        function playAudio2() {
-            x2.play();
-        }
-
-        let p = document.getElementById("pbr");
-        let c = document.getElementById("currentPbr");
-
-        p.addEventListener(
-            "input",
-            function() {
-                c.innerHTML = p.value;
-                x.playbackRate = p.value;
-                x2.playbackRate = p.value;
-            },
-            false
-        );
-    </script>
-@endpush
 
 @endsection

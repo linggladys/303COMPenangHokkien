@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Register')
 @section('content')
     <x-app-auth-card>
         <form method="POST" action="{{ route('register') }}">

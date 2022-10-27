@@ -7,27 +7,37 @@
                 <x-app-page-header>Halo, {{ Auth::user()->name }}</x-app-page-header>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card bg-dark text-light mb-3">
+                        <div class="card bg-white bg-indigo-100  mb-3">
                             <div class="card-body">
                                 <h4>Liked {{ Str::plural('phrase',$likesCount) }}</h4>
+                                <div class="d-flex justify-content-end">
+                                    <i class="fa-solid fa-thumbs-up home-statistic-cards-icon"></i>
+                               </div>
                                 <hr>
                                 <p class="card-text span-text-hover">{{ $likesCount }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card text-dark bg-indigo-100 mb-3">
+                        <div class="card bg-white bg-indigo-100 mb-3">
                             <div class="card-body">
                                 <h4 class="card-title">Amount of  {{ Str::plural('login',Auth::user()->amount_of_logins) }}</h4>
+                                <div class="d-flex justify-content-end">
+                                    <i class="fa-solid fa-sign-in-alt home-statistic-cards-icon"></i>
+                               </div>
                                 <hr>
                                 <p class="card-text span-text-hover">{{ Auth::user()->amount_of_logins }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card bg-dark text-light mb-3">
+                        <div class="card bg-white bg-indigo-100 mb-3">
                             <div class="card-body">
                                 <h4 class="card-title">Created {{ Str::plural('memory aid',$memAidsCount) }}</h4>
+                                <div class="d-flex justify-content-end">
+                                     <i class="fa-solid fa-brain home-statistic-cards-icon"></i>
+                                </div>
+
                                 <hr>
                                 <p class="card-text span-text-hover">{{ $memAidsCount }}</p>
                             </div>
@@ -39,7 +49,7 @@
                     <h4>Most liked words from users</h4>
                     @foreach ($phrase as $phraseItem)
                     <div class="col-md-3 mb-3">
-                        <div class="card bg-light text-center">
+                        <div class="card bg-white text-center">
                           <div class="card-body">
 
                             <a href={{ route('phrases.show',['phraseCateogryId'=>$phraseItem->phrase_category_id,'phraseId'=>$phraseItem->id]) }} class="card-title text-decoration-none">{{ $phraseItem->phrase_name}}</a>
