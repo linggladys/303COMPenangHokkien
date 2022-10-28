@@ -21,11 +21,13 @@
                                         src="{{ asset($category->phrase_category_image_cover) }}" alt="lesson-image">
 
                                     <div class="d-grid gap-1">
-                                           <a href="{{ route('draganddropphrase.index',$category->id) }}" class="btn btn-primary btn-custom">
+                                           <a href="{{ route('draganddropphrase.index',$category->id) }}" class="btn btn-primary btn-custom"
+                                            data-bs-toggle="tooltip" data-bs-placement="right" title="Play by matching phrases in Penang Hokkien">
                                             <i class="fa-solid fa-list-ul"></i>
                                             Phrase
                                         </a>
-                                        <a href="{{ route('draganddropaudiomale.index',$category->id) }}" class="btn btn-secondary btn-custom">
+                                        <a href="{{ route('draganddropaudiomale.index',$category->id) }}" class="btn btn-secondary btn-custom"
+                                            data-bs-toggle="tooltip" data-bs-placement="right" title="Play by listening pronunciation in Penang Hokkien">
                                             <i class="fa-solid fa-ear-listen"></i>
                                             Pronunciation
                                         </a>

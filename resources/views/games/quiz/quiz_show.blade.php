@@ -50,7 +50,7 @@
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="{{ route('quiz.quizStart', $phraseCategory->id) }}">Gia</a>
                                 <a class="btn btn-info" href="{{ route('quiz.quizReview', $phraseCategory->id) }}">Latest Quiz Review</a>
-                                <a class="btn bg-indigo-300" href="{{ route('quiz.index') }}" role="button">Return to Quiz</a>
+                                <a class="btn btn-secondary" href="{{ route('quiz.index') }}" role="button">Return to Quiz</a>
                             </div>
 
                     </div>
