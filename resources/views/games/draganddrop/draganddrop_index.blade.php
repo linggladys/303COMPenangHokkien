@@ -6,7 +6,7 @@
             <div class="container">
                 <x-app-page-header>Drag and Drop</x-app-page-header>
                 <div class="btn-group mb-3">
-                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#danddInstructionsModal">
+                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dandInstructionsModal">
                       <i class="fa-solid fa-info-circle"></i>
                      View Instructions
                  </button>
