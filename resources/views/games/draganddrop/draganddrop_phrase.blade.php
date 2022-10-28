@@ -2,12 +2,16 @@
 @foreach ($phrases as $phrase)
   @section('title','Drag and Drop from the category '.$phrase->phraseCategory->phrase_category_name)
 @endforeach
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <h1>Phrase Matching Game</h1>
-            <p class="lead">Drag the English phrases over to the matching ones in Hokkien</p>
+            <p class="lead">Drag the English phrases over to the matching ones in Hokkien
+                <a class="btn btn-warning" href="{{ route('draganddrop.index') }}" role="button">
+                    <i class="fa-solid fa-long-arrow-left"></i>
+                    Return to Drag and Drop
+                </a>
+            </p>
             <div id="msgIndicator"></div>
                 <div class="col-6">
                           <ul class="draggable-list">

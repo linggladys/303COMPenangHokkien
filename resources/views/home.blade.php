@@ -7,7 +7,7 @@
                 <x-app-page-header>Ha lo, {{ Auth::user()->name }}</x-app-page-header>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card bg-white bg-indigo-100  mb-3">
+                        <div class="card bg-white bg-indigo-100 mb-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How many phrases have you liked?">
                             <div class="card-body">
                                 <h4 class="card-title span-text-hover">Liked {{ Str::plural('phrase',$likesCount) }}</h4>
                                 <div class="d-flex justify-content-end">
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card bg-white bg-indigo-100 mb-3">
+                        <div class="card bg-white bg-indigo-100 mb-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How many times have you logged in?">
                             <div class="card-body">
                                 <h4 class="card-title span-text-hover">Amount of  {{ Str::plural('login',Auth::user()->amount_of_logins) }}</h4>
                                 <div class="d-flex justify-content-end">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card bg-white bg-indigo-100 mb-3">
+                        <div class="card bg-white bg-indigo-100 mb-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How many memory aids have you created?">
                             <div class="card-body">
                                 <h4 class="card-title span-text-hover">Created {{ Str::plural('memory aid',$memAidsCount) }}</h4>
                                 <div class="d-flex justify-content-end">

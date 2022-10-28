@@ -5,6 +5,13 @@
         <div class="row">
             <div class="container">
                 <x-app-page-header>Phrase List</x-app-page-header>
+                <div class="mb-3">
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#phraseInstructionsModal">
+                    <i class="fa-solid fa-info-circle"></i>
+                   View Instructions
+               </button>
+                </div>
+
                 <div class="row">
                     @foreach ($phraseCategories as $category)
                         <div class="col-md-4 col-sm-6">
@@ -33,3 +40,4 @@
         </div>
     </div>
 @endsection
+@include('phraseCategory.instructions')

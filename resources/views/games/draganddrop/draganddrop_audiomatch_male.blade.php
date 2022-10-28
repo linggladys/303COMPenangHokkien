@@ -8,10 +8,7 @@
         <div class="row justify-content-center">
             <h1>Phrase Matching Game</h1>
             <p class="lead">Drag the English phrases over to the matching male pronunciation audio in Hokkien
-
                      <a href="{{ route('draganddropaudiofemale.index',$phraseId)}}" class="btn btn-primary">Click here to switch the pronunciation audio to female</a>
-
-
             </p>
 
             <div id="msgIndicator"></div>

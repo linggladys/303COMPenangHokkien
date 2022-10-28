@@ -28,7 +28,7 @@
                         @endif
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <h4> Wa mia <span class="span-text-hover fw-bolder text-indigo-400">{{ $userData->name }}
                             </span></h4>
                         <p class="fw-bolder small">Last logged in: <span

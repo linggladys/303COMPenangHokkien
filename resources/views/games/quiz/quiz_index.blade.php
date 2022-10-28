@@ -3,8 +3,16 @@
 @section('content')
     <div class="container">
         <x-app-page-header>Quiz</x-app-page-header>
-        <p class="lead small">Please pick a phrase category <a class="btn btn-info" href="{{ route('quiz.quizStatistics') }}" >Quiz Result Statistics From {{ auth()->user()->username }}</a></p>
-
+        <div class="btn-group mb-3">
+           <a class="btn btn-info" href="{{ route('quiz.quizStatistics') }}">
+            <i class="fa-solid fa-chart-line"></i>
+         View Quiz Result Statistics
+        </a>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quizInstructionsModal">
+             <i class="fa-solid fa-info-circle"></i>
+            View Instructions
+        </button>
+        </div>
         <div class="row">
             @foreach ($phraseCategories as $category)
                 <div class="col-md-4 col-sm-6">
@@ -30,5 +38,6 @@
             @endforeach
         </div>
     </div>
-
 @endsection
+<!-- modal for instructions -->
+@include('games.quiz.quiz_instructions')

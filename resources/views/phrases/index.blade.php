@@ -1,9 +1,17 @@
 @extends('layouts.app')
 @foreach ($phrases as $phrase)
- @section('title', 'Learn Penang Hokkien - ' . $phrase->phraseCategory->phrase_category_name )
+ @section('title', $phraseCategory->phrase_category_name. ' Phrase List')
 @endforeach
 @section('content')
     <div class="container">
+        <x-app-page-header>{{ $phraseCategory->phrase_category_name }} Phrase List
+            <div class="mb-3">
+                <a href="{{ route('phrasesCategory.index') }}" class="btn btn-warning">
+                    <i class="fa-solid fa-long-arrow-left"></i>
+                    Return to Phrase Categories
+                </a>
+            </div>
+        </x-app-page-header>
         <div class="row">
             <div class="table-responsive">
                 <table class="table bg-light text-indigo-600">

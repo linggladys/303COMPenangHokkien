@@ -36,3 +36,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+// activating tooltip when hover on a component
+var tooltipActivateList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipActivateList.map(function (tooltipActivateEl) {
+  return new bootstrap.Tooltip(tooltipActivateEl)
+})

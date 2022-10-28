@@ -15,9 +15,11 @@ class PhraseController extends Controller
     public function index($phraseCategoryId)
     {
         $phrases = Phrase::with('phraseCategory')->where('phrase_category_id',$phraseCategoryId)->get();
-
+        $phraseCategory = PhraseCategory::with('phrases')->where('id',$phraseCategoryId)->find($phraseCategoryId);
+        // dd($phraseCategory);
          return view('phrases.index', [
              'phrases' => $phrases,
+             'phraseCategory'=>$phraseCategory
          ]);
     }
 

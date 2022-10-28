@@ -22,23 +22,23 @@ Auth::routes(['verify'=>true]);
 
 Route::name('auth.resend_confirmation')->get('/register/confirm/resend', 'Auth\RegisterController@resendConfirmation');
 
-Route::get('/user/home', [HomeController::class, 'index'])->name('home')->middleware(['verified']);
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(['verified']);
 
-Route::group(['middleware'=>['auth','verified'],'prefix'=>'user'],function(){
+Route::group(['middleware'=>['auth','verified']],function(){
 
     Route::get('phrase-category',[PhraseCategoryController::class,'index'])->name('phrasesCategory.index');
     Route::get('phrase-category/{phraseCateogryId}/phrases',[PhraseController::class,'index'])->name('phrases.index');
     Route::get('phrase-category/{phraseCateogryId}/phrase/{phraseId}',[PhraseController::class,'show'])->name('phrases.show');
 
 
-    Route::get('/profile/index',[ProfileController::class,'index'])->name('profile.index');
-    Route::get('/profile/edit',[ProfileController::class,'edit'])->name('profile.edit');
-    Route::post('/profile/store',[ProfileController::class,'store'])->name('profile.store');
+    Route::get('/user-profile/index',[ProfileController::class,'index'])->name('profile.index');
+    Route::get('/user-profile/edit',[ProfileController::class,'edit'])->name('profile.edit');
+    Route::post('/user-profile/store',[ProfileController::class,'store'])->name('profile.store');
 
-    Route::get('/profile/change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
-    Route::post('/profile/change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
-    Route::get('/profile/change-password/confirm-otp',[ProfileController::class,'confirmOTP'])->name('profile.confirmOTP');
-    Route::post('/profile/change-password/validate-otp',[ProfileController::class,'validateOTP'])->name('profile.validateOTP');
+    Route::get('/user-profile/change-password',[ProfileController::class,'changePassword'])->name('profile.changePassword');
+    Route::post('/user-profile/change-password',[ProfileController::class,'updatePassword'])->name('profile.updatePassword');
+    Route::get('/user-profile/change-password/confirm-otp',[ProfileController::class,'confirmOTP'])->name('profile.confirmOTP');
+    Route::post('/user-profile/change-password/validate-otp',[ProfileController::class,'validateOTP'])->name('profile.validateOTP');
 
 
     Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');

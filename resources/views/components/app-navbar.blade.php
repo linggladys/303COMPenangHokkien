@@ -40,7 +40,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-white" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-indigo-600" href="{{ route('quiz.index') }}">
-                                <i class="fa-solid fa-circle-question"></i>
+                                <i class="fa-solid fa-hand-pointer"></i>
                                 Quiz
                             </a>
                             <a class="dropdown-item text-indigo-600" href="{{ route('draganddrop.index') }}">

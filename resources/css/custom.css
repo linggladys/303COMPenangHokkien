@@ -52,6 +52,7 @@
     background: rgba(109, 95, 253, 0.5);
     z-index: 2;
 }
+
 .image-container:hover:before {
     opacity: 1;
 }
@@ -66,14 +67,11 @@
 .btn-custom {
     opacity: 0;
     transition: opacity 0.5s ease;
-    position: relative;
-    padding: 0 40px;
     height: 40px;
-    line-height: 40px;
     max-width: 260px;
-    cursor: pointer;
     z-index: 3;
 }
+
 .image-container:hover .btn-custom {
     opacity: 1;
 }
