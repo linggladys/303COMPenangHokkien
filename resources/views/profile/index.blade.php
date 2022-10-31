@@ -21,7 +21,8 @@
                     <div class="d-flex justify-content-center m-3">
                         @if ($userData->profile_image)
                             <img src="{{ asset('uploads/user_images/' . $userData->profile_image) }}"
-                                alt="user-image-profile" class="rounded-circle" id="showProfileImage" title="{{ auth()->user()->username }}'s profile pic">
+                                alt="user-image-profile" class="rounded-circle" id="showProfileImage"
+                                title="{{ auth()->user()->username }}'s profile pic">
                         @else
                             <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
                                 class="img-fluid img-thumbnail">
@@ -30,6 +31,9 @@
 
                     <div class="mb-1">
                         <h4> Wa mia <span class="span-text-hover fw-bolder text-indigo-400">{{ $userData->name }}
+                                @if ($userData->email_verified_at)
+                                    <i class="fa-solid fa-circle-check text-success" title="Verified Account"></i>
+                                @endif
                             </span></h4>
                         <p class="fw-bolder small">Last logged in: <span
                                 class="fw-lighter">{{ date('d-m-Y, H:i', strtotime($userData->last_login)) }}</span></p>

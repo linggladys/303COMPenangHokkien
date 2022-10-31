@@ -40,7 +40,12 @@
                                 <img src="{{ asset('assets/images/user.png') }}" alt="user-image-profile-unavailable"
                                     class="icon-avatar">
                             @endif
-                            <span class="span-text-hover">{{ $memoryAid->user->username }}</span>
+                            <span class="span-text-hover">
+                                {{ $memoryAid->user->username }}
+                                @if ($memoryAid->user->email_verified_at)
+                                <i class="fa-solid fa-circle-check text-success" title="Verified Account"></i>
+                            @endif
+                            </span>
                         </p>
                         {!! $memoryAid->memory_aid_content !!}
                         <div class="d-flex justify-content-end">
@@ -88,7 +93,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         {!! $userMemAid->memory_aid_content !!}
-                        <div class="btn-group">
+                        <div class="btn-group" role="group">
                             <a class="btn btn-warning"
                                 href="{{ route('memaid.edit', ['phraseId' => $userMemAid->phrase_id, 'memAidId' => $userMemAid->id]) }}"
                                 role="button">
