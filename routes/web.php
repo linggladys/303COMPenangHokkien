@@ -40,7 +40,6 @@ Route::group(['middleware'=>['auth','verified']],function(){
     Route::get('/user-profile/change-password/confirm-otp',[ProfileController::class,'confirmOTP'])->name('profile.confirmOTP');
     Route::post('/user-profile/change-password/validate-otp',[ProfileController::class,'validateOTP'])->name('profile.validateOTP');
 
-
     Route::get('/liked-phrases',[LikeController::class,'index'])->name('likedphraselist.likes');
     Route::post('/phrase/{phrase}/word/likes',[LikeController::class,'store'])->name('phrases.likes');
     Route::delete('/phrase/{phrase}/word/likes',[LikeController::class,'destroy'])->name('phrase.likes');

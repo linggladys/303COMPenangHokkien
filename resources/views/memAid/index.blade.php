@@ -5,6 +5,12 @@
 
 @section('content')
     <div class="container">
+        <div class="mb-3">
+            <a href="{{ route('phrases.show',['phraseCateogryId'=>$phrasesoloId->phrase_category_id,'phraseId'=>$phrasesoloId->id]) }}" class="btn btn-warning">
+                <i class="fa-solid fa-long-arrow-left"></i>
+                Return to {{ $phrasesoloId->phrase_name }}
+            </a>
+        </div>
         @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <i class="fa-solid fa-face-smile" style="font-size: 18pt"></i>

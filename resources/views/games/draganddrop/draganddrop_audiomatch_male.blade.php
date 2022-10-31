@@ -51,7 +51,6 @@
         const msgIndicator = document.getElementById("msgIndicator");
         let ul = document.querySelector('.draggable-list');
 
-
         // current phrase being dragged
         let selectedId;
 

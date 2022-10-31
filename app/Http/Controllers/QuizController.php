@@ -53,7 +53,8 @@ class QuizController extends Controller
             DB::raw('correct_answers as correct'),
             DB::raw('wrong_answers as wrong')
         )
-            ->where('phrase_category_id', $phraseCategoryId)
+            ->where('user_id',auth()->user()->id)
+            ->where('phrase_category_id',$phraseCategoryId)
             ->orderBy('quiz_results.id', 'desc')
             ->limit(1)
             ->get();

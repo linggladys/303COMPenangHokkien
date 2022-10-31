@@ -14,7 +14,7 @@ class MemAidController extends Controller
     {
         $userId = auth()->user()->id;
         $phrases = Phrase::with('memoryAid')->where('id',$phraseId)->get();
-        $phrasesoloId = Phrase::where('id',$phraseId)->value('id');
+        $phrasesoloId = Phrase::with('phraseCategory')->where('id',$phraseId)->find($phraseId);
         $userMemAids= MemAid::with('user')->where('phrase_id',$phraseId)->where('user_id',$userId)->get();
         // dd($phrasesoloId);
         return view('memAid.index',[
@@ -66,9 +66,10 @@ class MemAidController extends Controller
             'memory_aid_content' => $request->input('memory_aid_content'),
         ]);
 
+        $phraseSoloId = Phrase::with('phraseCategory')->where('id',$phraseId)->find($phraseId);
         // dd('test');
 
-        return redirect(route('memaid.index',$phraseId))->withSuccess('Memory aid created with success!');
+        return redirect(route('phrases.show',['phraseCateogryId'=>$phraseSoloId->phrase_category_id,'phraseId'=>$phraseId]))->withSuccess('Memory aid created with success!');
     }
 
     public function edit($phraseId, $memAidId)
