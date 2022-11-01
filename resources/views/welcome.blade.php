@@ -8,7 +8,7 @@
 
                 @auth
                 <div class="text-center my-5">
-                      <a href="{{ url('/user/home') }}" class="btn btn-dark">
+                      <a href="{{ url('/home') }}" class="btn btn-dark">
                         <i class="fa-solid fa-house"></i>
                         Click to redirect to the home page.
                     </a>
