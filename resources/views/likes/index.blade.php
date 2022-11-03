@@ -34,6 +34,13 @@
 @section('content')
     <div class="container">
         <div class="row">
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="fa-solid fa-face-smile custom-icon-size"></i>
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
             <div class="col-md-6">
                 <table class="table bg-white text-indigo-600 table-bordered">
                     <h1>Your Liked Phrases</h1>
@@ -41,7 +48,6 @@
                         <tr>
                             <th scope="col">Liked Phrases</th>
                             <th scope="col">Operations</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -49,14 +55,15 @@
                             <tr class="">
                                 {{-- {{ $like->phrase->phraseCategory->id }} --}}
 
-                                <td scope="row">{{ $like->phrase->phrase_name }}</td>
+                                <td scope="row">
+                                    <a href="{{ route('phrases.show', ['phraseCateogryId'=>$like->phrase->phrase_category_id,'phraseId'=>$like->phrase_id]) }}" class="text-decoration-none">
+                                       {{ $like->phrase->phrase_name }}
+                                    </a>
+                                </td>
                                 <td>
                                     {{-- {{ $like->phrase }} --}}
                                     <form action="{{ route('phrase.likes', $like->phrase_id) }}" method="post">
-                                        <a href="{{ route('phrases.show', ['phraseCateogryId'=>$like->phrase->phrase_category_id,'phraseId'=>$like->phrase_id]) }}" class="btn btn-primary">
-                                            <i class="fa-solid fa-eye"></i>
-                                            View
-                                        </a>
+
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger"

@@ -88,8 +88,10 @@ class MemAidController extends Controller
         $memAid->memory_aid_content = $request->input('memory_aid_content');
         $memAid->update();
         // dd($phraseId);
+        $phraseSoloId = Phrase::with('phraseCategory')->where('id',$memAid->phrase_id)->find($memAid->phrase_id);
 
-        return redirect(route('memaid.index',$memAid->phrase_id))->withSuccess('Memory aid modified with success!');
+        // dd($phraseSoloId);
+        return redirect(route('phrases.show',['phraseCateogryId'=>$phraseSoloId->phrase_category_id,'phraseId'=>$memAid->phrase_id]))->withSuccess('Memory aid modified with success!');
     }
 
     public function destroy($memAidId)

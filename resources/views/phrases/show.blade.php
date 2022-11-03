@@ -143,7 +143,25 @@
                             {{ Str::plural('upvote', $memoryAid->upvotes()->count()) }}
                         </button>
                     </div>
+                    <div class="btn-group justify-content-around" role="group">
+                        <a class="btn btn-warning"
+                            href="{{ route('memaid.edit', ['phraseId' => $memoryAid->phrase_id, 'memAidId' => $memoryAid->id]) }}"
+                            role="button">
+                            <i class="fa-solid fa-pencil"></i>
+                            Edit
+                        </a>
+                        <form action="{{ route('memaid.destroy', $memoryAid->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Are you sure of this action?');" role="button">
+                                <i class="fa-solid fa-trash-can"></i>
+                                Delete
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
                 @empty
                 <p class="text-center my-5">
                     None of the memory aids have been made from {{ Auth::user()->username }}
@@ -156,7 +174,7 @@
             <div class="d-flex justify-content-center">
               <a href="{{ route('memaid.index',$phrase->id) }}" class="btn bg-indigo-600 text-white">
                 <i class="fa-solid fa-brain"></i>
-                View More Memory Aids From Users
+                View More Memory Aids From Users And You!
             </a>
             </div>
         </div>

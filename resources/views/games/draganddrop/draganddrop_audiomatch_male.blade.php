@@ -6,9 +6,14 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <h1>Phrase Matching Game</h1>
+            <h1>Phrase Matching Game
+                <a class="btn btn-warning" href="{{ route('draganddrop.index') }}" role="button">
+                    <i class="fa-solid fa-long-arrow-left"></i>
+                    Return to Drag and Drop
+                </a>
+            </h1>
             <p class="lead">Drag the English phrases over to the matching male pronunciation audio in Hokkien
-                     <a href="{{ route('draganddropaudiofemale.index',$phraseId)}}" class="btn btn-primary">Click here to switch the pronunciation audio to female</a>
+              <a href="{{ route('draganddropaudiofemale.index',$phraseId)}}" class="btn btn-primary">Click here to switch the pronunciation audio to female</a>
             </p>
 
             <div id="msgIndicator"></div>
@@ -105,11 +110,11 @@
                 document.getElementById(selectedId).style.display = "none";
                 document.getElementById(dropTargetId).style.display = "none";
                 msgIndicator.style.display = "block";
-                msgIndicator.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check"></i>Correct  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                msgIndicator.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check custom-icon-size"></i> Correct  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
                 matchingCounter++;
             }else{
                 msgIndicator.style.display = "block";
-                msgIndicator.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><i class="fa-solid fa-xmark"></i>Wrong  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                msgIndicator.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><i class="fa-solid fa-xmark custom-icon-size"></i> Wrong  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
             }
 
             if (matchingCounter === document.querySelectorAll(".englishPhrases").length) {

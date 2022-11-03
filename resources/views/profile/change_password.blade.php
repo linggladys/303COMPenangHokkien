@@ -11,7 +11,6 @@
                         @csrf
                         @if ($errors->any())
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <i class="fa-solid fa-face-frown" style="font-size: 24pt"></i>
                             @foreach ($errors->all() as $error)
                             <ul>
                                <li>{{ $error }}</li>
@@ -20,6 +19,14 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
+
+                    @if(session('failures'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fa-solid fa-face-frown custom-icon-size"></i>
+                        {{ session('failures') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
                         <div class="mb-3 input-group">
                             <span class="input-group-text" for="old_password">Current Password</span>

@@ -4,13 +4,13 @@
     <div class="container">
         @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fa-solid fa-face-smile" style="font-size: 18pt"></i>
+                <i class="fa-solid fa-face-smile custom-icon-size"></i>
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @elseif(session('failures'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="fa-solid fa-face-frown" style="font-size: 18pt"></i>
+                <i class="fa-solid fa-face-frown custom-icon-size"></i>
                 {{ session('failures') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -31,9 +31,6 @@
 
                     <div class="mb-1">
                         <h4> Wa mia <span class="span-text-hover fw-bolder text-indigo-400">{{ $userData->name }}
-                                @if ($userData->email_verified_at)
-                                    <i class="fa-solid fa-circle-check text-success" title="Verified Account"></i>
-                                @endif
                             </span></h4>
                         <p class="fw-bolder small">Last logged in: <span
                                 class="fw-lighter">{{ date('d-m-Y, H:i', strtotime($userData->last_login)) }}</span></p>

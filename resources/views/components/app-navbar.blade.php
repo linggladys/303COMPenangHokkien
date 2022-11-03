@@ -15,7 +15,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto ">
                         <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link text-indigo-600">Dashboard</a>
+                            <a href="{{ route('home') }}" class="nav-link text-indigo-600">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-indigo-600" href="#" role="button"
@@ -69,9 +69,7 @@
                             </a>
 
 
-                            <div class="dropdown-menu dropdown-menu-end bg-white" style="margin: 0" aria-labelledby="navbarDropdown">
-
-
+                            <div class="dropdown-menu dropdown-menu-end m-0" aria-labelledby="navbarDropdown">
                                 {{-- Redirect to User Profile --}}
                                 <a class="dropdown-item text-indigo-600" href="{{ route('profile.index') }}">
                                     <i class="fa-solid fa-user"></i>

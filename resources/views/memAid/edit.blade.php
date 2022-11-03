@@ -29,7 +29,6 @@
                 filebrowserUploadUrl : "{{ route('memaidPic.upload',['_token' => csrf_token()]) }}",
                 filebrowserUploadMethod : 'form'
             });
-
         </script>
     @endpush
 @endsection

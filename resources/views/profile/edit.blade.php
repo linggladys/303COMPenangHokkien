@@ -9,7 +9,7 @@
                 <div class="card-body">
                     @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <i class="fa-solid fa-face-frown" style="font-size: 24pt"></i>
+                        <i class="fa-solid fa-face-frown custom-icon-size"></i>
                         @foreach ($errors->all() as $error)
                         <ul>
                           <li>{{ $error }}</li>

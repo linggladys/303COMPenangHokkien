@@ -104,11 +104,11 @@
                 document.getElementById(selectedId).style.display = "none";
                 document.getElementById(dropTargetId).style.display = "none";
                 msgIndicator.style.display = "block";
-                msgIndicator.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check"></i>Correct  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                msgIndicator.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check custom-icon-size"></i> Correct  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
                 matchingCounter++;
             }else{
                 msgIndicator.style.display = "block";
-                msgIndicator.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><i class="fa-solid fa-xmark"></i>Wrong  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                msgIndicator.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><i class="fa-solid fa-xmark custom-icon-size"></i> Wrong  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
             }
 
             if (matchingCounter === document.querySelectorAll(".englishPhrases").length) {

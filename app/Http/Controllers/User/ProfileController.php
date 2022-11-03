@@ -107,7 +107,7 @@ class ProfileController extends Controller
 
             return redirect(route('profile.index'))->withSuccess('User Password Edited With Success! ');
         }else{
-            return redirect(route('profile.index'))->withFailures('Oops, the current password does not match with the new one.');
+            return redirect(route('profile.changePassword'))->withFailures('Oops, the current password is invalid. Try again.');
         }
 
     }
