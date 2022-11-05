@@ -24,7 +24,7 @@
                             <div class="col-md-6">
                                 <div class="d-flex justify-content-center mb-3">
                                     @if($userData->profile_image)
-                                    <img src="{{ asset('uploads/user_images/'.$userData->profile_image) }}"
+                                    <img src="{{ asset('storage/images/'.$userData->profile_image) }}"
                                         alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="rounded-circle">
                                     @else
                                     <img src="{{ asset('assets/images/user.png') }}"

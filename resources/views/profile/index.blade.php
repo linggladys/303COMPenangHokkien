@@ -20,7 +20,7 @@
                 <div class="card bg-white align-items-center">
                     <div class="d-flex justify-content-center m-3">
                         @if ($userData->profile_image)
-                            <img src="{{ asset('uploads/user_images/' . $userData->profile_image) }}"
+                            <img src="{{ asset('storage/images/'.$userData->profile_image) }}"
                                 alt="user-image-profile" class="rounded-circle" id="showProfileImage"
                                 title="{{ auth()->user()->username }}'s profile pic">
                         @else
@@ -32,8 +32,14 @@
                     <div class="mb-1">
                         <h4> Wa mia <span class="span-text-hover fw-bolder text-indigo-400">{{ $userData->name }}
                             </span></h4>
-                        <p class="fw-bolder small">Last logged in: <span
+                            @if($userData->last_login)
+                            <p class="fw-bolder small">Last logged in: <span
                                 class="fw-lighter">{{ date('d-m-Y, H:i', strtotime($userData->last_login)) }}</span></p>
+                            @else
+                            <p class="fw-bolder small">Last logged in: <span
+                                class="fw-lighter">N/A</span></p>
+                            @endif
+
                     </div>
 
                     <div class="mb-3 btn-group" role="group">

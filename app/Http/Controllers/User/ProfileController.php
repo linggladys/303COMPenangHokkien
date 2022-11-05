@@ -48,7 +48,7 @@ class ProfileController extends Controller
             $file = $request->file('profile_image');
 
             $filename = date('YmdHi').'.'.$file->getClientOriginalExtension();
-            $file->move(public_path('uploads/user_images'),$filename);
+            $file->move(public_path('storage/images'),$filename);
             $userData['profile_image'] = $filename;
         }
 

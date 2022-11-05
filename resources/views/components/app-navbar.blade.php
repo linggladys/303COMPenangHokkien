@@ -55,7 +55,7 @@
 
                     <ul class="navbar-nav ms-auto">
                         @if (Auth::user()->profile_image)
-                            <img src="{{ asset('uploads/user_images/' . Auth::user()->profile_image) }}"
+                            <img src="{{ asset('storage/images/' . Auth::user()->profile_image) }}"
                                 alt="user-image-profile" class="icon-avatar">
                         @else
                             <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
