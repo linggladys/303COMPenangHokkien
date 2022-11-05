@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('title','Confirm Email')
 @section('content')
+@guest
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Please Enter Your Email</div>
+                <div class="card-header">Please Enter Your Email To Reset Password</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -44,4 +45,8 @@
         </div>
     </div>
 </div>
+@endguest
+@auth
+  <h1 class="text-center">You have reset your password</h1>
+@endauth
 @endsection

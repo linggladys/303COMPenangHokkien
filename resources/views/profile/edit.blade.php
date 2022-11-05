@@ -28,7 +28,7 @@
                                         alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="rounded-circle">
                                     @else
                                     <img src="{{ asset('assets/images/user.png') }}"
-                                        alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="w-25 img-fluid rounded-circle">
+                                        alt="user-profile-image" id="showProfileImage" name="showProfileImage" class="rounded-circle">
                                     @endif
                                 </div>
                             </div>

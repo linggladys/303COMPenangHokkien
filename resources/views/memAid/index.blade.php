@@ -33,7 +33,7 @@
                     <div class="card border-primary p-3 mb-3">
                         <p class="card-text">
                             @if ($memoryAid->user->profile_image)
-                                <img src="{{ asset('uploads/user_images/' . $memoryAid->user->profile_image) }}"
+                                <img src="{{ asset('storage/images/' . $memoryAid->user->profile_image) }}"
                                     alt="user-image-profile" class="icon-avatar"
                                     title="{{ $memoryAid->user->username }}'s profile pic" />
                             @else

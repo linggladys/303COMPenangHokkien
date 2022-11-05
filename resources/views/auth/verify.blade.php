@@ -1,5 +1,6 @@
 
 @extends('layouts.guest')
+@section('title','Email Verifification Notification')
 @section('guest-content')
         <div class="container">
             <div class="row justify-content-center">

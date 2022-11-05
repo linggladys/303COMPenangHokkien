@@ -11,7 +11,14 @@
                  <label for="memory_aid_content" class="form-label">Enter Your Memory Aid Content</label>
                  <textarea class="memory_aid_content form-control" name="memory_aid_content" id="memory_aid_content" rows="3"></textarea>
                  <div class="my-3">
-                     <button type="submit" class="btn btn-secondary">Save</button>
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save
+                    </button>
+                    <a href="{{ route('phrases.show',['phraseCateogryId'=>$phrase->phrase_category_id,'phraseId'=>$phrase->id]) }}" class="btn btn-danger">
+                        <i class="fa-solid fa-xmark"></i>
+                        Cancel
+                    </a>
                  </div>
 
                 </div>

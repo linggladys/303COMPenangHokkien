@@ -25,7 +25,7 @@
                                 title="{{ auth()->user()->username }}'s profile pic">
                         @else
                             <img src="{{ asset('assets/images/user.png') }}" alt="user-profile-image"
-                                class="img-fluid img-thumbnail">
+                                class="img-fluid">
                         @endif
                     </div>
 

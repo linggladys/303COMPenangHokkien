@@ -124,7 +124,7 @@
                 <p class="card-text">
                     <span class="span-text-hover fw-light">Created by: </span>
                     @if ($memoryAid->user->profile_image)
-                        <img src="{{ asset('uploads/user_images/' . $memoryAid->user->profile_image) }}"
+                        <img src="{{ asset('storage/images/' . $memoryAid->user->profile_image) }}"
                             alt="user-image-profile" class="icon-avatar"
                             title="{{ $memoryAid->user->username }}'s profile pic" />
                     @else

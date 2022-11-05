@@ -14,7 +14,11 @@
                  <textarea class="form-control memory_aid_content" name="memory_aid_content" id="memory_aid_content" rows="3">{!! $memoryAid->memory_aid_content !!}</textarea>
                  @endforeach
                  <div class="my-3">
-                    <button type="submit" class="btn btn-secondary">Save</button>
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save
+                    </button>
+                    <a href="{{ route('phrases.show',['phraseCateogryId'=>$memoryAid->phrase->phrase_category_id,'phraseId'=>$memoryAid->phrase->id]) }}" class="btn btn-danger">Cancel</a>
                  </div>
                 </div>
             </form>

@@ -20,7 +20,7 @@
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
-                            class="btn btn-secondary">New user? Sign up first.</a>
+                            class="btn btn-secondary">New user? Register first.</a>
                     @endif
                     </div>
 
