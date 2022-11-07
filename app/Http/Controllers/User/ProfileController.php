@@ -126,7 +126,7 @@ class ProfileController extends Controller
             ]);
             return redirect(route('profile.index'))->withSuccess('User Password Edited With Success! ');
         }else{
-            return back()->withFailures('You have entered the wrong OTP.');
+            return back()->withFailures('Oops, you have entered the wrong OTP.');
         }
     }
 }
