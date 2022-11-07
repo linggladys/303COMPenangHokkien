@@ -20,10 +20,10 @@
             @endif
             <div class="container">
                 <div class="mb-3">
-                    <button onclick="history.back()" class="btn btn-warning">
+                    <a href="{{ route('phrases.index',$phraseCategory) }}" class="btn btn-warning">
                         <i class="fa-solid fa-long-arrow-left"></i>
                         Return to Previous Page
-                    </button>
+                    </a>
                 </div>
                 @foreach ($phrases as $phrase)
                     <div class="card mb-3 custom-card bg-white" id="card">

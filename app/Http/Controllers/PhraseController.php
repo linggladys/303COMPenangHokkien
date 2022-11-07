@@ -28,9 +28,11 @@ class PhraseController extends Controller
     {
         $phrases = Phrase::where('id',$phraseId)->where('phrase_category_id',$phraseCategoryId)->get();
         $memoryAids = MemAid::where('phrase_id',$phraseId)->where('user_id',auth()->user()->id)->take(1)->get();
+        $phraseCategory = PhraseCategory::with('phrases')->where('id',$phraseCategoryId)->find($phraseCategoryId);
         return view('phrases.show',[
             'phrases'=>$phrases,
-            'memoryAids'=>$memoryAids
+            'memoryAids'=>$memoryAids,
+            'phraseCategory'=>$phraseCategory
         ]);
     }
 
