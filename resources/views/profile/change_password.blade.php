@@ -30,18 +30,18 @@
 
                         <div class="mb-3 input-group">
                             <span class="input-group-text" for="old_password">Current Password</span>
-                            <input type="password" class="form-control" id="old_password" name="old_password" value="{{ old('old_password') }}">
+                            <input type="password" class="form-control" id="old_password" name="old_password" value="{{ old('old_password') }}" required>
                         </div>
 
                         <div class="mb-3 input-group">
                             <span for="new_password" class="input-group-text">New Password</span>
-                            <input type="password" class="form-control" id="new_password" name="new_password">
+                            <input type="password" class="form-control" id="new_password" name="new_password" required>
                         </div>
 
 
                         <div class="mb-3 input-group">
                             <span for="confirm_password" class="input-group-text">Reconfirm New Password</span>
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
                         </div>
 
                         <div class="d-flex justify-content-center gap-2">

@@ -39,8 +39,8 @@ class ProfileController extends Controller
         // validation
         //  'name' => ['required', 'string', 'max:255', 'unique:users']
         $request->validate([
-            'name'=>'required|string|max:255|unique:users',
-            'username'=>'required|string|max:255|unique:users',
+            'name'=>'string|max:255|unique:users',
+            'username'=>'string|max:255|unique:users',
             'profile_image' =>'nullable|image|mimes:jpg,png,gif,jpeg|max:2048'
         ]);
 
