@@ -48,7 +48,11 @@
                     <div class="card-body text-center">
                         <div id="donutchart"></div>
                             <div class="btn-group">
+                                @if ($phraseCategory->userResult)
+                                <a class="btn btn-primary" href="{{ route('quiz.quizStart', $phraseCategory->id) }}">Play Again</a>
+                                @else
                                 <a class="btn btn-primary" href="{{ route('quiz.quizStart', $phraseCategory->id) }}">Gia</a>
+                                @endif
                                 <a class="btn btn-info" href="{{ route('quiz.quizReview', $phraseCategory->id) }}">Latest Quiz Review</a>
                                 <a class="btn btn-secondary" href="{{ route('quiz.index') }}" role="button">Return to Quiz</a>
                             </div>

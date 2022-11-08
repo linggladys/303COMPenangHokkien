@@ -29,8 +29,8 @@
                         @endif
                     </div>
 
-                    <div class="mb-1">
-                        <h4> Wa mia <span class="span-text-hover fw-bolder text-indigo-400">{{ $userData->name }}
+                    <div class="mb-1 span-text-hover">
+                        <h4 data-bs-toggle="tooltip" data-bs-placement="right" title="My name is"> Wa mia <span class="fw-bolder text-indigo-400">{{ $userData->name }}
                             </span></h4>
                             @if($userData->last_login)
                             <p class="fw-bolder small">Last logged in: <span

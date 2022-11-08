@@ -164,9 +164,12 @@
 
                 @empty
                 <p class="text-center my-5">
-                    None of the memory aids have been made from {{ Auth::user()->username }}
+                    None of the memory aids have been made
                     <br>
-                    <a  class="btn btn-primary" href="{{ route('memaid.create',$phrase->id) }}" role="button">Create Your Memory Aid Here</a>
+                    <a  class="btn btn-primary" href="{{ route('memaid.create',$phrase->id) }}" role="button">
+                        <i class="fa-solid fa-plus"></i>
+                        Create Your Memory Aid Here
+                    </a>
                 </p>
                 @endforelse
 

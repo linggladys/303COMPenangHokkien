@@ -9,7 +9,6 @@
                 <div class="card-body">
                     @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <i class="fa-solid fa-face-frown custom-icon-size"></i>
                         @foreach ($errors->all() as $error)
                         <ul>
                           <li>{{ $error }}</li>
@@ -45,14 +44,14 @@
                                 <div class="input-group mb-3">
                                     <span for="name" class="input-group-text span-text-hover">Name</span>
                                     <input type="text" class="form-control" id="name" name="name"
-                                        value="{{ $userData->name }}" placeholder="Jane Doe" aria-describedby="emailHelp">
+                                        value="{{ $userData->name }}" placeholder="Jane Doe" aria-describedby="nameHelp" required>
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <span for="username" class="input-group-text span-text-hover">Username</span>
                                     <input type="text" class="form-control" id="username" name="username"
                                         value="{{ $userData->username }}" placeholder="janedoe"
-                                        aria-describedby="emailHelp">
+                                        aria-describedby="usernameHelp"required>
                                 </div>
                             <div class="d-flex justify-content-center gap-2">
                                 <button type="submit" class="btn btn-primary">

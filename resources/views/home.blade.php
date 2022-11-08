@@ -5,19 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <x-app-page-header>Ha lo, {{ Auth::user()->name }}</x-app-page-header>
+                <hr>
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card bg-white bg-indigo-100 mb-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How many phrases have you liked?">
-                            <div class="card-body">
-                                <h4 class="card-title span-text-hover">Liked {{ Str::plural('phrase',$likesCount) }}</h4>
-                                <div class="d-flex justify-content-end">
-                                    <i class="fa-solid fa-thumbs-up home-statistic-cards-icon"></i>
-                               </div>
-                                <hr>
-                                <p class="card-text span-text-hover">{{ $likesCount }}</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h4>Data Overview</h4>
                     <div class="col-md-3">
                         <div class="card bg-white bg-indigo-100 mb-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How many times have you logged in?">
                             <div class="card-body">
@@ -26,7 +16,19 @@
                                     <i class="fa-solid fa-sign-in-alt home-statistic-cards-icon"></i>
                                </div>
                                 <hr>
-                                <p class="card-text span-text-hover">{{ Auth::user()->amount_of_logins }}</p>
+                                <h5 class="card-text span-text-hover">{{ Auth::user()->amount_of_logins }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-white bg-indigo-100 mb-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How many phrases have you liked?">
+                            <div class="card-body">
+                                <h4 class="card-title span-text-hover">Liked {{ Str::plural('phrase',$likesCount) }}</h4>
+                                <div class="d-flex justify-content-end">
+                                    <i class="fa-solid fa-thumbs-up home-statistic-cards-icon"></i>
+                               </div>
+                                <hr>
+                                <h5 class="card-text span-text-hover">{{ $likesCount }}</h5>
                             </div>
                         </div>
                     </div>
@@ -39,7 +41,7 @@
                                 </div>
 
                                 <hr>
-                                <p class="card-text span-text-hover">{{ $memAidsCount }}</p>
+                                <h5 class="card-text span-text-hover">{{ $memAidsCount }}</h5>
                             </div>
                         </div>
                     </div>

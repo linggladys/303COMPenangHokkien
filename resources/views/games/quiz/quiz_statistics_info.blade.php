@@ -10,10 +10,10 @@
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Month', 'Points'],
+            ['Month', 'Marks'],
             @php
                 foreach ($lineChartResults as $result) {
-                    echo "['" . $result->quiz_taken_date . "', " . $result->points . "],";
+                    echo "['" . $result->quiz_taken_date . "', " . $result->points . '],';
                 }
             @endphp
         ]);
@@ -39,22 +39,25 @@
 @section('content')
     <div class="container">
         <x-app-page-header>Quiz Statistics Info</x-app-page-header>
-
+        <a class="btn btn-warning" href="{{ route('quiz.index') }}" role="button">
+            <i class="fa-solid fa-long-arrow-left"></i>
+            Return to Quiz
+        </a>
         <div class="row">
             <h2 class="span-text-hover">Latest Score from Quiz</h2>
             @foreach ($latestScore as $latestScoreItem)
-            <div class="col-md-3 mb-3">
-                <div class="card bg-white text-center">
-                            <div class="card-body">
-                                <h4>{{ $latestScoreItem->phrase_category_name }}</h4>
-                                <hr>
-                                <p class="card-text">
-                                    {{ $latestScoreItem->points }} points
-                                    </p>
-                            </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-white text-center">
+                        <div class="card-body">
+                            <h4>{{ $latestScoreItem->phrase_category_name }}</h4>
+                            <hr>
+                            <p class="card-text">
+                                {{ $latestScoreItem->points }} marks
+                            </p>
                         </div>
+                    </div>
 
-            </div>
+                </div>
             @endforeach
         </div>
         <div class="row">

@@ -29,7 +29,7 @@
                                         <a href="{{ route('draganddropaudiomale.index',$category->id) }}" class="btn btn-secondary btn-custom"
                                             data-bs-toggle="tooltip" data-bs-placement="right" title="Play by listening pronunciation in Penang Hokkien">
                                             <i class="fa-solid fa-ear-listen"></i>
-                                            Pronunciation
+                                            Listen
                                         </a>
                                     </div>
 
