@@ -48,7 +48,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <h4>Most liked words from users</h4>
+                    <h4>Most liked phrases from users</h4>
                     @foreach ($phrase as $phraseItem)
                     <div class="col-md-3 mb-3">
                         <div class="card bg-white text-center">
@@ -60,10 +60,6 @@
                         </div>
                     </div>
                     @endforeach
-
-                    <div class="col-md-6">
-
-                    </div>
                 </div>
             </div>
 
