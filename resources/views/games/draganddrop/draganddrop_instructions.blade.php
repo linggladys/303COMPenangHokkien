@@ -13,7 +13,7 @@
             <li>Choose a phrase category of your choice</li>
             <li>Choose a mode (drag via understanding Penang Hokkien phrases or listening pronunciation).</li>
             <li>Drag the meaning of phrase according to the correct phrase or pronunciation.</li>
-            <li>The default pronunciation for drag and drop is male. You can choose the female option to do so.</li>
+            <li>The default Listen Mode for drag and drop is male. You can choose the female option to do so.</li>
             <li>Click on "Return to Drag and Drop" to select another phrase category you like.</li>
             <li>Have fun!😊</li>
           </ol>

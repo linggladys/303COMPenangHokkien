@@ -41,7 +41,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <table class="table bg-white text-indigo-600 table-bordered">
                     <h1>Your Liked Phrases</h1>
                     <thead>
@@ -81,7 +81,7 @@
                     @endforelse
                 </table>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="my-5">
                      <div id="donutchart" class="chartCustom"></div>
                 </div>
