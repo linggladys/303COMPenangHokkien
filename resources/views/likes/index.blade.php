@@ -44,6 +44,7 @@
             <div class="col-md-5">
                 <table class="table bg-white text-indigo-600 table-bordered">
                     <h1>Your Liked Phrases</h1>
+                    @forelse ($likes as $like)
                     <thead>
                         <tr>
                             <th scope="col">Liked Phrases</th>
@@ -51,7 +52,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($likes as $like)
                             <tr class="">
                                 {{-- {{ $like->phrase->phraseCategory->id }} --}}
 
@@ -75,10 +75,6 @@
                                 </td>
                             </tr>
                     </tbody>
-                @empty
-                    <img src="{{ asset('assets/images/frowned.png') }}" alt="notFound" class="mx-auto">
-                    It is empty here.
-                    @endforelse
                 </table>
             </div>
             <div class="col-md-7">
@@ -86,6 +82,10 @@
                      <div id="donutchart" class="chartCustom"></div>
                 </div>
             </div>
+            @empty
+            <img src="{{ asset('assets/images/frowned.png') }}" alt="notFound">
+            It is empty here.
+            @endforelse
         </div>
     </div>
 @endsection
