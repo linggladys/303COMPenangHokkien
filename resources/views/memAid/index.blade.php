@@ -70,7 +70,7 @@
                                 <form action="{{ route('memaid.upvotes', $memoryAid->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Remove from Upvotes</button>
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure of this action?');">Remove from Upvotes</button>
                                 </form>
                             @endif
                         </div>
