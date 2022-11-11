@@ -6,7 +6,7 @@
         <div class="btn-group mb-3">
            <a class="btn btn-info" href="{{ route('quiz.quizStatistics') }}">
             <i class="fa-solid fa-chart-line"></i>
-         View Quiz Result Statistics
+         View Quiz Result Recency Statistics
         </a>
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quizInstructionsModal">
              <i class="fa-solid fa-info-circle"></i>
