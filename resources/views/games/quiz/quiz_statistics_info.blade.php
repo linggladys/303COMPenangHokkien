@@ -38,7 +38,7 @@
 
 @section('content')
     <div class="container">
-        <x-app-page-header>Quiz Statistics Info</x-app-page-header>
+        <x-app-page-header>Quiz Results Recency Statistics Info</x-app-page-header>
         <a class="btn btn-warning" href="{{ route('quiz.index') }}" role="button">
             <i class="fa-solid fa-long-arrow-left"></i>
             Return to Quiz

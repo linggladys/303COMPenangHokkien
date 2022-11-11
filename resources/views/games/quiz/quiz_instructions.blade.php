@@ -15,6 +15,7 @@
             <li>If you are ready to take on the quiz, click "Gia", which means go!</li>
             <li>Click on "Latest Quiz Review" to review on the latest quiz you took recently.</li>
             <li>Click on "Return to Quiz" to select another phrase category you like.</li>
+            <li>To view the latest scores according to quiz taken, users can click on "View Quiz Results Recency Statistics".</li>
             <li>Have fun!😊</li>
           </ol>
         </div>
