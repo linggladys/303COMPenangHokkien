@@ -33,7 +33,7 @@
 
             </div>
             @endforeach
-            <button type="submit" class="btn btn-primary">Submit Quiz</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure of the answers?');">Submit Quiz</button>
         </form>
         <a class="btn btn-warning" href="{{ route('quiz.quizInfo', $phraseCategory->id) }}" role="button">Return To
             Quiz Info</a>
