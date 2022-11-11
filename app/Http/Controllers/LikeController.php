@@ -20,7 +20,13 @@ class LikeController extends Controller
         $userId = auth()->user()->id;
         $likes = Like::where('user_id',$userId)->get();
         // dd($likes);
-        $likesResults = DB::select(DB::raw("SELECT COUNT(likes.phrase_id) AS count_likes, phrase_categories.phrase_category_name FROM likes LEFT JOIN phrases on likes.phrase_id = phrases.id LEFT JOIN phrase_categories ON phrases.phrase_category_id = phrase_categories.id LEFT JOIN users ON likes.user_id = users.id WHERE users.id = $userId GROUP BY phrase_categories.id;"));
+        $likesResults = Like::select(DB::raw("COUNT(likes.phrase_id) AS count_likes"), DB::raw("phrase_categories.phrase_category_name"))
+        ->leftJoin('phrases','likes.phrase_id', '=','phrases.id')
+        ->leftJoin('phrase_categories','phrase_category_id','=','phrase_categories.id')
+        ->leftJoin('users','likes.user_id', '=', 'users.id')
+        ->where('users.id', $userId)
+        ->groupBy('phrase_categories.id')
+        ->get();
         $data = "";
         foreach ($likesResults as $result)
         {
