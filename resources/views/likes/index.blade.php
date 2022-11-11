@@ -43,7 +43,7 @@
             @endif
             <div class="col-md-5">
                 <table class="table bg-white text-indigo-600 table-bordered">
-                    @forelse ($likes as $like)
+
                     <h1>Your Liked Phrases</h1>
                     <thead>
                         <tr>
@@ -52,10 +52,9 @@
                         </tr>
                     </thead>
                     <tbody>
-
                             <tr>
                                 {{-- {{ $like->phrase->phraseCategory->id }} --}}
-
+                            @forelse($likes as $like)
                                 <td scope="row">
                                     <a href="{{ route('phrases.show', ['phraseCateogryId' => $like->phrase->phrase_category_id, 'phraseId' => $like->phrase_id]) }}"
                                         class="text-decoration-none">
@@ -88,7 +87,6 @@
                     <div id="donutchart" class="chartCustom"></div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
