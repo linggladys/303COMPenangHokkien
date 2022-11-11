@@ -35,16 +35,16 @@
     <div class="container">
         <div class="row">
             @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fa-solid fa-face-smile custom-icon-size"></i>
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fa-solid fa-face-smile custom-icon-size"></i>
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="col-md-5">
                 <table class="table bg-white text-indigo-600 table-bordered">
-                    <h1>Your Liked Phrases</h1>
                     @forelse ($likes as $like)
+                    <h1>Your Liked Phrases</h1>
                     <thead>
                         <tr>
                             <th scope="col">Liked Phrases</th>
@@ -52,12 +52,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr class="">
+
+                            <tr>
                                 {{-- {{ $like->phrase->phraseCategory->id }} --}}
 
                                 <td scope="row">
-                                    <a href="{{ route('phrases.show', ['phraseCateogryId'=>$like->phrase->phrase_category_id,'phraseId'=>$like->phrase_id]) }}" class="text-decoration-none">
-                                       {{ $like->phrase->phrase_name }}
+                                    <a href="{{ route('phrases.show', ['phraseCateogryId' => $like->phrase->phrase_category_id, 'phraseId' => $like->phrase_id]) }}"
+                                        class="text-decoration-none">
+                                        {{ $like->phrase->phrase_name }}
                                     </a>
                                 </td>
                                 <td>
@@ -75,17 +77,18 @@
                                 </td>
                             </tr>
                     </tbody>
+                @empty
+                    <img src="{{ asset('assets/images/frowned.png') }}" alt="notFound">
+                    It is empty here.
+                    @endforelse
                 </table>
             </div>
             <div class="col-md-7">
                 <div class="my-5">
-                     <div id="donutchart" class="chartCustom"></div>
+                    <div id="donutchart" class="chartCustom"></div>
                 </div>
             </div>
-            @empty
-            <img src="{{ asset('assets/images/frowned.png') }}" alt="notFound">
-            It is empty here.
-            @endforelse
+
         </div>
     </div>
 @endsection

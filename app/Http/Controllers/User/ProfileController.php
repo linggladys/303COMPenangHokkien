@@ -33,19 +33,19 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $id = Auth::user()->id;
-        $userData = User::find($id);
+        $authUserId = Auth::user()->id;
+        $userData = User::find($authUserId);
 
         // validation
         //  'name' => ['required', 'string', 'max:255', 'unique:users']
         $request->validate([
-            'name'=>'string|max:255|unique:users',
-            'username'=>'string|max:255|unique:users',
+            'name'=>'string|max:255',
+            'username'=>'unique:users,username'. ($authUserId  ? ",$authUserId " : ''),
             'profile_image' =>'nullable|image|mimes:jpg,png,gif,jpeg|max:2048'
         ]);
 
         $userData->name = $request->name;
-        $userData->username = $request->username;
+        // $userData->username = $request->username;
 
         if($request->file('profile_image')){
             $file = $request->file('profile_image');
@@ -67,8 +67,8 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        $id = Auth::user()->id;
-        $userData = User::find($id);
+        $authUserId  = Auth::user()->id;
+        $userData = User::find($authUserId);
         return view('profile.edit',compact('userData'));
     }
 
