@@ -2,13 +2,11 @@
 
 use App\Http\Controllers\DragandDropController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KnowVocabController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MemAidController;
 use App\Http\Controllers\PhraseCategoryController;
 use App\Http\Controllers\PhraseController;
 use App\Http\Controllers\QuizController;
-use App\Http\Controllers\SelectedMemAidController;
 use App\Http\Controllers\UpvoteController;
 use App\Http\Controllers\User\ProfileController;
 use Illuminate\Support\Facades\Auth;
