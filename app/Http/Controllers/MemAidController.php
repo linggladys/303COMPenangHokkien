@@ -44,8 +44,8 @@ class MemAidController extends Controller
             $request->file('upload')->move(public_path('storage/images'), $fileName);
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
             $url = asset('storage/images/'.$fileName);
-            $message = 'Image has uploaded with success! 😊';
-            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$message')</script>";
+            $msg = 'Image has uploaded to the server with success! 😊';
+            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
             @header('Content-type: text/html; charset=utf-8');
             echo $response;
