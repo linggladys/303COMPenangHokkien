@@ -16,10 +16,8 @@ class PhraseCategoryController extends Controller
     public function index()
     {
         $phraseCategories = PhraseCategory::get();
-        $phraseId = Phrase::get()->value('id');
         return view('phraseCategory.index',[
             'phraseCategories' => $phraseCategories,
-            'phraseId'=>$phraseId
         ]);
     }
 }
