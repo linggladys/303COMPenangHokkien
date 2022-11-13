@@ -99,8 +99,8 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">
-                                                <i class="fa-solid fa-thumbs-down"></i>
-                                                Dislike this phrase
+                                                <i class="fa-solid fa-trash-can"></i>
+                                                Remove from likes
                                         </form>
                                         </button>
                                     @endif
