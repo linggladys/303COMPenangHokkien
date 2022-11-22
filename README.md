@@ -9,8 +9,6 @@ Hello, thank you for visiting this repository. Ok Learn Penang Hokkien is a web 
 <li>Run php artisan serve</li>
 </ol>
 <hr>
-
-<hr>
 To learn Penang Hokkien, it is been suggested that users can start looking into the resources listed below
 <ul>
 <li><a href="https://www.penang-traveltips.com/penang-hokkien.htm">Learn to Read and Write Hokkien in 10 minutes</a></li>
