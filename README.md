@@ -7,8 +7,8 @@ After cloning the project, here are the steps to perform in a command prompt of 
 <li>Run composer install</li>
 <li>Run cp .env.example .env</li>
 <li>Run php artisan key:generate</li>
-<li>Run php artisan artisan migrate (make sure to import the database (303comdb.sql) into any MySQL Database Management of your choice)</li>
-<li>Run php artisan db:seed</li>
+<li>Import the database (303comdb(1)) in any PHPMySQL database management of your choice</li>
+<li>Run npm install and npm run dev to enable asset bundling in the frontend</li>
 <li>Run php artisan serve</li>
 </ol>
 <hr>
