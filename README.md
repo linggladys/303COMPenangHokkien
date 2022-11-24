@@ -10,7 +10,7 @@ After cloning the project, here are the steps to perform in a command prompt of 
 <li>Import the database (303comdb(1)) in any PHPMySQL database management of your choice</li>
 <li>Run npm install and npm run dev to enable asset bundling in the frontend</li>
 <li>Run php artisan serve</li>
-<li>Please login with username <span><b>tester</b></span> and password<span><b></b>password</span></li>
+<li>Please login with username <span><b>tester</b></span> and password<span><b>password</b></span></li>
 </ol>
 <hr>
 <h1>Some screenshots of the web application's features</h1>
