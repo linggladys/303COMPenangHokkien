@@ -95,7 +95,7 @@
                                                 Like this phrase
                                         </form>
                                     @else
-                                        <form action="{{ route('phrases.likes', $phrase) }}" method="post">
+                                        <form action="{{ route('phrases.likes', $phrase) }}" method="post" onclick="return confirm('Are you sure of this action?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">
