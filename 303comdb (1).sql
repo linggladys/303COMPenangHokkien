@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 24, 2022 at 03:02 PM
+-- Generation Time: Nov 24, 2022 at 03:27 PM
 -- Server version: 5.7.33
 -- PHP Version: 8.1.8
 
@@ -493,6 +493,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `profile_image`, `last_login`, `amount_of_logins`) VALUES
+(12, 'Tester', 'tester', 'penanghokkien303@gmail.com', '2022-11-24 15:26:28', '$2y$10$doulvi/NuWElvpTWehSh/OwjXvvRWOxWBpLgu6EPeu1H0qiDjm7y.', NULL, '2022-11-24 15:25:39', '2022-11-24 15:26:58', NULL, '2022-11-24 15:26:58', 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -622,7 +629,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `mem_aids`
@@ -682,7 +689,7 @@ ALTER TABLE `upvotes`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
