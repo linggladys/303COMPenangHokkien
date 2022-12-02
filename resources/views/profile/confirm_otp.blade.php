@@ -3,6 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            @if(session('failures'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="fa-solid fa-face-frown custom-icon-size"></i>
+                {{ session('failures') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
             <div class="col-md-8">
                 <x-app-page-header>OTP Verfication</x-app-page-header>
                 <div class="card bg-white">
