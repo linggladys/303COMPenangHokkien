@@ -81,7 +81,7 @@ class ProfileController extends Controller
     {
         $request->validate([
             'old_password' => 'required',
-            'new_password' => 'required|min:8',
+            'new_password' => 'required|min:8|max:16',
             'confirm_password' => 'required|same:new_password',
         ]);
 
